@@ -1,0 +1,16 @@
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  evaluator_job:
+    runs-on: ubuntu-18.04
+    name: Evaluator job
+    steps:
+      - uses: actions/checkout@v2
+      - name: Evaluator step
+        id: test
+        uses: betrybe/cypress-evaluator-action@feature/react-redux-evaluator
+        with:
+          repository-test-name: 'betrybe'
+          repository-test-branch: 'master'
