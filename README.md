@@ -201,13 +201,21 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
     * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-1. O header deve conter a imagem de perfil vinda do Gravatar, o nome da pessoa (digitado na tela de início) e o placar zerado;
+1. A página deve conter as informações relacionadas à pergunta
 
-1. A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia;
+    * A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia
+    * A categoria da pergunta (campo _category_) deve ser exibida em um elemento com o atributo `data-testid` com o valor `question-category` para a pessoa que está jogando
+    * O texto da pergunta (campo _question_) deve ser exibido em um elemento com o atributo `data-testid` com o valor `question-text` para a pessoa que está jogando
+    * O texto com as alternativas devem ser exibidos seguindo as regras abaixo:
+        * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
+        * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`.
 
-1. A categoria da pergunta e seu texto devem ser mostradas para a pessoa que está jogando. Essas informações devem vir dos campos category e question, respectivamente;
 
-1. As alternativas devem ser mostradas em ordem aleatória, misturando as incorretas com a correta;
+
+
+
+
+1. As alternativas devem ser exibidas em ordem aleatória
 
 1. Só deve ser possível escolher uma resposta correta por pergunta;
 
