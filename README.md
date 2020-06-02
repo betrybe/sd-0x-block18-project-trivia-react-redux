@@ -208,14 +208,12 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * O texto da pergunta (campo _question_) deve ser exibido em um elemento com o atributo `data-testid` com o valor `question-text` para a pessoa que está jogando
     * O texto com as alternativas devem ser exibidos seguindo as regras abaixo:
         * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
-        * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`.
+        * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
+        * As alternativas devem ser exibidas em ordem aleatória
 
 
 
 
-
-
-1. As alternativas devem ser exibidas em ordem aleatória
 
 1. Só deve ser possível escolher uma resposta correta por pergunta;
 

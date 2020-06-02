@@ -7,7 +7,7 @@ const HEADER_SCORE_SELECTOR = '[data-testid="header-score"]';
 const QUESTION_CATEGORY_SELECTOR = '[data-testid="question-category"]';
 const QUESTION_TEXT_SELECTOR = '[data-testid="question-text"]';
 const CORRECT_ALTERNATIVE_SELECTOR = '[data-testid="correct-answer"]';
-const WRONG_ALTERNATIVE_SELECTOR = '[data-testid="wrong-answer-0"]';
+const WRONG_ALTERNATIVES_SELECTOR = '[data-testid*="wrong-answer"]';
 
 const name = 'Nome da pessoa';
 const email = 'email@pessoa.com';
@@ -15,6 +15,7 @@ const email = 'email@pessoa.com';
 describe('O _header_ deve conter as informações da pessoa jogadora', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
     cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
     cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
     cy.get(BUTTON_PLAY_SELECTOR).click();
@@ -36,6 +37,7 @@ describe('O _header_ deve conter as informações da pessoa jogadora', () => {
 describe('A página deve conter as informações relacionadas à pergunta', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
     cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
     cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
     cy.get(BUTTON_PLAY_SELECTOR).click();
@@ -51,6 +53,21 @@ describe('A página deve conter as informações relacionadas à pergunta', () =
 
   it('as alternativas devem estar presentes', () => {
     cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('exist');
-    cy.get(WRONG_ALTERNATIVE_SELECTOR).should('exist');
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('exist');
+  });
+});
+
+
+describe('Só deve ser possível escolher uma resposta correta por pergunta', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('a quantidade de respostas corretas deve ser 1', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.length', 1);
   });
 });
