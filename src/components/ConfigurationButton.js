@@ -5,7 +5,7 @@ import '../style/ConfigurationButton.css';
 const ConfigurationButton = () => (
   <Link to="/settings">
     <button
-      data-testid="config-button"
+      data-testid="btn-settings"
       className="config-btn"
     >
       <span className="pra-cego-ver">Configurações</span>

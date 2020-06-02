@@ -102,7 +102,7 @@ class SettingSelectors extends Component {
     const { handleSelectorChange, categorie, difficulty, type } = this.props;
     return (
       <div className="settings-container">
-        <p className="settings-title">Configurações</p>
+        <p className="settings-title" data-testid='settings-title'>Configurações</p>
         <div>
           <div>
             {this.categorieSelector(handleSelectorChange, categorie)}

@@ -181,6 +181,11 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * A pessoa que joga deve conseguir escrever seu email no input de email
     * O botão "Jogar" deve ser desabilitado caso email e/ou senha não estejam preenchidos
 
+1. Botão que leva à tela de configurações
+
+    * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
+    * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
+
 
 1. O Botão no canto superior direito leva para a tela de configurações;
 
