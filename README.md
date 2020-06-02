@@ -176,24 +176,22 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 
     * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
     * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
-    * O botão que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
+    * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
     * A pessoa que joga deve conseguir escrever seu nome no input de texto
     * A pessoa que joga deve conseguir escrever seu email no input de email
     * O botão "Jogar" deve ser desabilitado caso email e/ou senha não estejam preenchidos
 
-1. Botão que leva à tela de configurações
+1. A pessoa que joga deve ter acesso à tela de configurações através da tela inicial
 
     * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
     * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
 
+1. A pessoa jogadora deve iniciar um jogo
 
-1. O Botão no canto superior direito leva para a tela de configurações;
-
-1. Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo;
-
-1. Ao clicar no botão "Jogar", uma requisição para a API do Trivia deve ser feita para pegar o token de jogador;
-
-1. O token deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
+    * Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo
+    * Ao clicar no botão "Jogar", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
+    * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
+    * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
 
 #### Tela do jogo:
 
