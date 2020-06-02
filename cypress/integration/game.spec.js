@@ -101,3 +101,23 @@ describe('Ao clicar em uma resposta, a resposta correta deve ficar verde e as in
     cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border', '3px solid rgb(255, 0, 0)');
   });
 });
+
+describe.only('A pessoa que joga tem 30 segundos para responder cada pergunta', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('aguarda 5 segundos e responde a alternativa correta', () => {
+    cy.wait(5000);
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('not.be.disabled').click();
+  });
+
+  it('aguarda mais de 30 segundos para responder', () => {
+    cy.wait(32000);
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('be.disabled');
+  });
+});

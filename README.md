@@ -210,6 +210,7 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
         * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
         * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
         * As alternativas devem ser exibidas em ordem aleatória
+        * Dica: utilize botões (<button/>) para as alternativas
 
 1. Só deve ser possível escolher uma resposta correta por pergunta
 
@@ -217,20 +218,25 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * Utilize a propriedade css `border` com o valor `3px solid rbd(6, 240, 15)` para a alternativa correta.
     * Utilize a propriedade css `border` com o valor `3px solid rbd(255, 0, 0)` para as alternativas incorretas.
 
+1. A pessoa que joga tem 30 segundos para responder cada pergunta
+
+    * Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada
+    * Respostas incorretas não somam pontos ao placar
+    * Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até zero
+    * Após o tempo se esgotar, todos os botões das alternativas devem ser desabilitados
+
+
+
+
+
+
+1. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
 1. Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível);
 
 1. Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível);
 
-1. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando;
-
-1. A pessoa que joga tem 30 segundos para responder cada pergunta. Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até o zero;
-
 1. A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`;
-
-1. Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada;
-
-1. Respostas incorretas não somam pontos ao placar;
 
 1. Após a resposta ser dada, o botão "Próxima" deve aparecer. Ao clicar nesse botão, a próxima pergunta deve aparecer na tela;
 
