@@ -195,6 +195,12 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 
 #### Tela do jogo:
 
+1. O _header_ deve conter as informações da pessoa jogadora
+
+    * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
+    * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
+    * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
+
 1. O header deve conter a imagem de perfil vinda do Gravatar, o nome da pessoa (digitado na tela de início) e o placar zerado;
 
 1. A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia;

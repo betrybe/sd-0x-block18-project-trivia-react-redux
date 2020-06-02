@@ -60,7 +60,7 @@ describe('A pessoa jogadora deve iniciar um jogo', () => {
     cy.clearLocalStorage();
   });
 
-  it('inicia jogo salvando um token de jogador', () => {
+  it('inicia jogo salvando um token de jogador', async () => {
     cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
     cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
     cy.get(BUTTON_PLAY_SELECTOR).click().should(() => {
