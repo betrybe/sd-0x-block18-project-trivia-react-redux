@@ -71,3 +71,33 @@ describe('Só deve ser possível escolher uma resposta correta por pergunta', ()
     cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.length', 1);
   });
 });
+
+describe('Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('verifica cor da alternativa correta quando acerta a questão', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border', '3px solid rgb(6, 240, 15)');
+  });
+
+  it('verifica a cor das alternativas incorretas quando acerta a questão', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border', '3px solid rgb(255, 0, 0)');
+  });
+
+  it('verifica cor da alternativa correta quando erra a questão', () => {
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border', '3px solid rgb(6, 240, 15)');
+  });
+
+  it('verifica a cor das alternativas incorretas quando erra a questão', () => {
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border', '3px solid rgb(255, 0, 0)');
+  });
+});

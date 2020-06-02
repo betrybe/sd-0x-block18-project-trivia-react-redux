@@ -211,17 +211,16 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
         * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
         * As alternativas devem ser exibidas em ordem aleatória
 
+1. Só deve ser possível escolher uma resposta correta por pergunta
 
+1. Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas
+    * Utilize a propriedade css `border` com o valor `3px solid rbd(6, 240, 15)` para a alternativa correta.
+    * Utilize a propriedade css `border` com o valor `3px solid rbd(255, 0, 0)` para as alternativas incorretas.
 
-
-
-1. Só deve ser possível escolher uma resposta correta por pergunta;
 
 1. Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível);
 
 1. Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível);
-
-1. Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas;
 
 1. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando;
 
