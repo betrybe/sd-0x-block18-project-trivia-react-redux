@@ -12,6 +12,8 @@ const FEEDBACK_TEXT_SELECTOR = '[data-testid="feedback-text"]';
 const FEEDBACK_TOTAL_SCORE_SELECTOR = '[data-testid="feedback-total-score"]';
 const FEEDBACK_TOTAL_QUESTION_SELECTOR = '[data-testid="feedback-total-question"]';
 const BUTTON_PLAY_AGAIN_SELECTOR = '[data-testid="btn-play-again"]';
+const BUTTON_RANKING_SELECTOR = '[data-testid="btn-ranking"]';
+const RANKING_TITLE_SELECTOR = '[data-testid="ranking-title"]';
 
 const name = 'Nome da pessoa';
 const email = 'email@pessoa.com';
@@ -103,7 +105,7 @@ describe('A pessoa deve ver a mensagem de _feedback_', () => {
   });
 });
 
-describe.only('A pessoa jogadora deve ver as informações relacionadas aos resultados obtidos', () => {
+describe('A pessoa jogadora deve ver as informações relacionadas aos resultados obtidos', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -176,7 +178,7 @@ describe.only('A pessoa jogadora deve ver as informações relacionadas aos resu
   });
 });
 
-describe.only('A pessoa jogadora tem a opção de jogar novamente', () => {
+describe('A pessoa jogadora tem a opção de jogar novamente', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -198,5 +200,30 @@ describe.only('A pessoa jogadora tem a opção de jogar novamente', () => {
   it('a pessoa deve ser redirecionada para tela inicial', () => {
     cy.get(BUTTON_PLAY_AGAIN_SELECTOR).click();
     cy.get(INPUT_PLAYER_EMAIL_SELECTOR).should('exist');
+  });
+});
+
+describe('A pessoa jogadora tem a opção de visualizar a tela de _ranking_', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+  });
+
+  it('a pessoa deve ser redirecionada para tela inicial', () => {
+    cy.get(BUTTON_RANKING_SELECTOR).click();
+    cy.get(RANKING_TITLE_SELECTOR).should('exist');
   });
 });

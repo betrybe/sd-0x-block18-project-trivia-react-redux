@@ -273,10 +273,14 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início
     * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
 
+1. A pessoa jogadora tem a opção de visualizar a tela de _ranking_
+
+    * Ao clicar no botão "Ver Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
+    * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
+    * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
 
 
-1. Ao clicar no botão "Jogar novamente" a pessoa que está jogando deve ser redirecionada para a tela de início, sem nenhuma informação prévia salva;
 
 1. Ao clicar no botão "Ver Ranking" a pessoa que está jogando deve ser redirecionada para a tela de ranking.
 

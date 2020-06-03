@@ -20,7 +20,7 @@ const Ranking = () => {
   });
   return (
     <div className="Ranking_father">
-      <h1 className="ranking-title">Ranking</h1>
+      <h1 data-testid="ranking-title" className="ranking-title">Ranking</h1>
       {getLocalStor.map(({ name, score, picture }, index) => {
         const position = index + 1;
         return (

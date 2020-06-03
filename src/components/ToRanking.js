@@ -14,6 +14,7 @@ const handleClick = (changeScore) => {
 const ToRanking = ({ buttonName, changeScore }) => (
   <Link to="/ranking">
     <button
+      data-testid="btn-ranking"
       className="Button_ranking"
       onClick={() => handleClick(changeScore)}
       type="button"
