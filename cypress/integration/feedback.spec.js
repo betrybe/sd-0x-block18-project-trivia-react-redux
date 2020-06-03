@@ -9,6 +9,8 @@ const WRONG_ALTERNATIVES_SELECTOR = '[data-testid*="wrong-answer"]';
 const BUTTON_NEXT_QUESTION_SELECTOR = '[data-testid="btn-next"]';
 const LOCAL_STORAGE_STATE_KEY = 'state';
 const FEEDBACK_TEXT_SELECTOR = '[data-testid="feedback-text"]';
+const FEEDBACK_TOTAL_SCORE_SELECTOR = '[data-testid="feedback-total-score"]';
+const FEEDBACK_TOTAL_QUESTION_SELECTOR = '[data-testid="feedback-total-question"]';
 
 const name = 'Nome da pessoa';
 const email = 'email@pessoa.com';
@@ -97,5 +99,78 @@ describe('A pessoa deve ver a mensagem de _feedback_', () => {
     cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
     cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
     cy.get(FEEDBACK_TEXT_SELECTOR).contains('Mandou bem!');
+  });
+});
+
+describe.only('A pessoa jogadora deve ver as informações relacionadas aos resultados obtidos', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('não acertou nenhuma pergunta', () => {
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.score);
+    });
+    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
+    });
+  });
+
+  it('acertou 2 perguntas', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.score);
+    });
+    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
+    });
+  });
+
+  it('acertou 4 perguntas', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.score);
+    });
+    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
+    });
   });
 });

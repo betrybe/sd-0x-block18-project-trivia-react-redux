@@ -263,9 +263,10 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
     * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
-1. O placar da pessoa que está jogando também deve ser mostrado em uma mensagem de feedback;
+1. A pessoa jogadora deve ver as informações relacionadas aos resultados obtidos
 
-1. O número de perguntas que a pessoa que está jogando acertou deve ser mostrado;
+    * O placar final deve ser mostrado em um elemento com o atributo `data-testid` com o valor `feedback-total-score`
+    * O número de perguntas que a pessoa acertou deve ser exibido em um elemento com o atributo `data-testid` com o valor `feedback-total-question`
 
 1. Ao clicar no botão "Jogar novamente" a pessoa que está jogando deve ser redirecionada para a tela de início, sem nenhuma informação prévia salva;
 
