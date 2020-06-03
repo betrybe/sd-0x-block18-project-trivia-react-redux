@@ -237,6 +237,10 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
     * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
+1. A pessoa que joga deve responder 5 perguntas no total
+
+    * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
+    * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Ranking_
 
 
 
@@ -245,7 +249,6 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 
 1. Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível);
 
-1. Após responder 5 perguntas, a pessoa que está jogando deve ser redirecionada para a tela de feedback;
 
 #### Tela de feedback:
 

@@ -10,6 +10,7 @@ const CORRECT_ALTERNATIVE_SELECTOR = '[data-testid="correct-answer"]';
 const WRONG_ALTERNATIVES_SELECTOR = '[data-testid*="wrong-answer"]';
 const LOCAL_STORAGE_STATE_KEY = 'state';
 const BUTTON_NEXT_QUESTION_SELECTOR = '[data-testid="btn-next"]';
+const FEEDBACK_TEXT_SELECTOR = '[data-testid="feedback-text"]';
 
 const name = 'Nome da pessoa';
 const email = 'email@pessoa.com';
@@ -171,5 +172,61 @@ describe('Após a resposta ser dada, o botão "Próxima" deve aparecer', () => {
   it('botão de próxima pergunta é visível quando a pergunta é respondida incorretamente', () => {
     cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
     cy.get(BUTTON_NEXT_QUESTION_SELECTOR).should('be.visible');
+  });
+});
+
+describe('A pessoa que joga deve responder 5 perguntas no total', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('acerta todas as perguntas', () => {
+    const before = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click().then(() => {
+      const after = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(before.player.score).to.be.lt(after.player.score);
+    });
+  });
+
+  it('erra todas as perguntas', () => {
+    const before = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click().then(() => {
+      const after = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(before.player.score).to.be.eq(after.player.score);
+    });
+  });
+
+  it('redireciona para a tela de _ranking_ após a quinta pergunta', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TEXT_SELECTOR).should('exist');
   });
 });
