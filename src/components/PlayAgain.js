@@ -20,6 +20,7 @@ const PlayAgain = ({ buttonName, changeScore }) => (
       onClick={() => handleClick(changeScore)}
       className="Button_play-again"
       type="button"
+      data-testid="btn-play-again"
     >
       {buttonName}
     </button>

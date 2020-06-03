@@ -11,6 +11,7 @@ const LOCAL_STORAGE_STATE_KEY = 'state';
 const FEEDBACK_TEXT_SELECTOR = '[data-testid="feedback-text"]';
 const FEEDBACK_TOTAL_SCORE_SELECTOR = '[data-testid="feedback-total-score"]';
 const FEEDBACK_TOTAL_QUESTION_SELECTOR = '[data-testid="feedback-total-question"]';
+const BUTTON_PLAY_AGAIN_SELECTOR = '[data-testid="btn-play-again"]';
 
 const name = 'Nome da pessoa';
 const email = 'email@pessoa.com';
@@ -172,5 +173,30 @@ describe.only('A pessoa jogadora deve ver as informações relacionadas aos resu
       const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
       expect(parseInt($el.text())).to.be.eq(state.player.assertions);
     });
+  });
+});
+
+describe.only('A pessoa jogadora tem a opção de jogar novamente', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+  });
+
+  it('a pessoa deve ser redirecionada para tela inicial', () => {
+    cy.get(BUTTON_PLAY_AGAIN_SELECTOR).click();
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).should('exist');
   });
 });
