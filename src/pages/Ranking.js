@@ -27,7 +27,7 @@ const Ranking = () => {
           <div className="ranking-item" key={`${name}-${score}`}>
             {imgComponent(picture, position)}
             <span data-testid={`${name}-${position}`} className="ranking-text">
-              {name} - {score} pontos
+              <span data-testid={`player-name-${position}`}>{name}</span> - {score} pontos
             </span>
           </div>
         );

@@ -279,12 +279,18 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
     * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
-
-
-
-1. Ao clicar no botão "Ver Ranking" a pessoa que está jogando deve ser redirecionada para a tela de ranking.
-
 #### Tela de ranking:
+
+1. Deve existir um botão para ir ao início
+
+    * Esse botão deve possuir o atributo `data-testid` com o valor `btn-go-home`
+    * Esse botão deve enviar a pessoa para o início (tela de preenchimento dos dados)
+
+1. Apresentação do _ranking_
+
+    * Deve-se mostrar uma lista com a imagem de perfil vinda do Gravatar, nome e pontuação das pessoas que jogaram em ordem decrescente (da maior pontuação para a menor)
+    * Os elementos com os nomes das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-name-${index}`, onde `${index}` é iniciado em zero
+    * Os elementos com as pontuações das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-score-${index}`, onde `${index}` é iniciado em zero
 
 1. Deve-se mostrar uma lista com a imagem de perfil vinda do Gravatar, nome e pontuação das pessoas que jogaram em ordem decrescente (da maior pontuação para a menor);
 
