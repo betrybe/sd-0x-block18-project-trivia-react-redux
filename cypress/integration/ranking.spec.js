@@ -21,7 +21,7 @@ const name3 = 'Mais uma pessoa';
 const email3 = 'mais@pessoa.com';
 
 describe('Deve existir um botão para ir ao início', () => {
-  beforeEach(() => {
+  it('volta para a tela inicial', () => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
     cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name1);
@@ -38,9 +38,6 @@ describe('Deve existir um botão para ir ao início', () => {
     cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
     cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
     cy.get(BUTTON_RANKING_SELECTOR).click();
-  });
-
-  it('volta para a tela inicial', () => {
     cy.get(BUTTON_GO_HOME_SELECTOR).click();
     cy.get(INPUT_PLAYER_EMAIL_SELECTOR).should('exist');
   });
