@@ -258,9 +258,10 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
     * O placar com o valor **atual** em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-1. A mensagem deve ser "Podia ser melhor..." caso a pessoa que está jogando acerte menos de 3 perguntas;
-
-1. A mensagem deve ser "Mandou bem!" caso a pessoa que está jogando acerte 3 perguntas ou mais;
+1. A pessoa deve ver a mensagem de _feedback_
+    * A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
+    * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
+    * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
 1. O placar da pessoa que está jogando também deve ser mostrado em uma mensagem de feedback;
 
