@@ -8,6 +8,8 @@ const QUESTION_CATEGORY_SELECTOR = '[data-testid="question-category"]';
 const QUESTION_TEXT_SELECTOR = '[data-testid="question-text"]';
 const CORRECT_ALTERNATIVE_SELECTOR = '[data-testid="correct-answer"]';
 const WRONG_ALTERNATIVES_SELECTOR = '[data-testid*="wrong-answer"]';
+const LOCAL_STORAGE_STATE_KEY = 'state';
+const BUTTON_NEXT_QUESTION_SELECTOR = '[data-testid="btn-next"]';
 
 const name = 'Nome da pessoa';
 const email = 'email@pessoa.com';
@@ -102,7 +104,7 @@ describe('Ao clicar em uma resposta, a resposta correta deve ficar verde e as in
   });
 });
 
-describe.only('A pessoa que joga tem 30 segundos para responder cada pergunta', () => {
+describe('A pessoa que joga tem 30 segundos para responder cada pergunta', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -119,5 +121,55 @@ describe.only('A pessoa que joga tem 30 segundos para responder cada pergunta', 
   it('aguarda mais de 30 segundos para responder', () => {
     cy.wait(32000);
     cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('be.disabled');
+  });
+});
+
+describe('Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('soma pontos ao acertar uma questão', () => {
+    const then = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click().then(() => {
+      const now = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(then.player.score).to.be.lt(now.player.score);
+    });
+  });
+
+  it('não soma pontos ao errar uma questão', () => {
+    const then = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click().then(() => {
+      const now = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(then.player.score).to.be.eq(now.player.score);
+    });
+  });
+});
+
+describe('Após a resposta ser dada, o botão "Próxima" deve aparecer', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('o botão de próxima pergunta não deve ser visível o início do jogo', () => {
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).should('not.be.visible');
+  });
+
+  it('botão de próxima pergunta é visível quando a pergunta é respondida corretamente', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).should('be.visible');
+  });
+
+  it('botão de próxima pergunta é visível quando a pergunta é respondida incorretamente', () => {
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).should('be.visible');
   });
 });

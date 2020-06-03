@@ -225,24 +225,27 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até zero
     * Após o tempo se esgotar, todos os botões das alternativas devem ser desabilitados
 
-
-
-
-
-
 1. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
+
+    * Você deve salvar a pontuação **atual** no `localStorage`
+    * Leia a seção "Implementações técnicas" para mais detalhes
+    * Respostas erradas não devem somar ao placar
+    * A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`;
+
+1. Após a resposta ser dada, o botão "Próxima" deve aparecer
+
+    * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
+    * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
+
+
+
+
 
 1. Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível);
 
 1. Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível);
 
-1. A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`;
-
-1. Após a resposta ser dada, o botão "Próxima" deve aparecer. Ao clicar nesse botão, a próxima pergunta deve aparecer na tela;
-
 1. Após responder 5 perguntas, a pessoa que está jogando deve ser redirecionada para a tela de feedback;
-
-1. Caso a API retorne um response_code: 3 (token expirado), a pessoa que está jogando deve ser redirecionada para a tela de início, sem nenhuma informação prévia salva.
 
 #### Tela de feedback:
 
@@ -287,7 +290,7 @@ Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de co
 **Player**
 
 No `localStorage` do navegador:
-* a chave `player` deve conter a seguinte estrutura:
+* a chave `state` deve conter a seguinte estrutura:
 ```
 player: {
     name,
