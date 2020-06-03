@@ -5,6 +5,7 @@ const CORRECT_ALTERNATIVE_SELECTOR = '[data-testid="correct-answer"]';
 const WRONG_ALTERNATIVES_SELECTOR = '[data-testid*="wrong-answer"]';
 const BUTTON_NEXT_QUESTION_SELECTOR = '[data-testid="btn-next"]';
 const LOCAL_STORAGE_STATE_KEY = 'state';
+const LOCAL_STORAGE_RANKING_KEY = 'ranking';
 const BUTTON_RANKING_SELECTOR = '[data-testid="btn-ranking"]';
 const RANKING_TITLE_SELECTOR = '[data-testid="ranking-title"]';
 const RANKING_PLAYERS_NAME_SELECTOR = '[data-testid*="player-name"]';
@@ -95,7 +96,7 @@ describe('Apresentação do _ranking_', () => {
     });
   });
 
-  it.only('o _ranking_ deve ser ordenado pela pontuação', () => {
+  it('o _ranking_ deve ser ordenado pela pontuação', () => {
     cy.get(BUTTON_GO_HOME_SELECTOR).click();
     cy.get(INPUT_PLAYER_NAME_SELECTOR).clear();
     cy.get(INPUT_PLAYER_EMAIL_SELECTOR).clear();
