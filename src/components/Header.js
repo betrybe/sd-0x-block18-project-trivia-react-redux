@@ -29,11 +29,12 @@ class Header extends React.Component {
           </p>
         </div>
         <div className="Header_score">
+        Pontos:
           <p
             data-testid="header-score"
             className="Header_score-text"
           >
-            Pontos: {score}
+            {score}
           </p>
           {showConfig()}
         </div>

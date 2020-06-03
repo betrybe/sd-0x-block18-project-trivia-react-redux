@@ -252,7 +252,11 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 
 #### Tela de feedback:
 
-1. Deve-se mostrar o placar no header junto com o nome da pessoa que está jogando;
+1. O _header_ de _feedback_ deve conter as informações da pessoa jogadora
+
+    * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
+    * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
+    * O placar com o valor **atual** em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
 1. A mensagem deve ser "Podia ser melhor..." caso a pessoa que está jogando acerte menos de 3 perguntas;
 
