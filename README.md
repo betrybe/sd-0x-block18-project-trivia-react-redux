@@ -39,11 +39,11 @@ Este repositório já contem um _template_ com um App React criado, configurado 
 
 Para o projeto ser validado, todos os [testes E2E](https://www.guru99.com/end-to-end-testing.html) devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do [Cypress](https://www.cypress.io/how-it-works/) que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam.
 
+Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
+
 Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nos atributos definidos no protótipo.
 
 Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
-
-#### Além dos testes automatizados, você também deve **escrever testes unitários que devem cobrir pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
 
 ### Trivia API
 
@@ -68,7 +68,7 @@ Esse endpoint te retornará o token que vai ser utilizado nas requisições segu
 }
 ```
 
-Paga pegar as perguntas, você realizar um GET request para o seguinte endpoint:
+Paga pegar as perguntas, você deve realizar um GET request para o seguinte endpoint:
 
 ```
 https://opentdb.com/api.php?amount=${quantidade-de-perguntas-retornadas}&token=${seu-token-aqui}
@@ -160,7 +160,7 @@ Lembre-se de manter o `data-testid` correto.
 
 ## Requisitos do projeto
 
-⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate**, e tiver a **cobertura de testes unitários mínima de 90%**.
+⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate**.
 
 Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking.
 
@@ -172,75 +172,123 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 
 #### Tela de início:
 
-1. A pessoa que joga deve conseguir escrever seu nome no input de texto;
+1. A pessoa que joga deve preencher as informações para iniciar um jogo
 
-1. A pessoa que joga deve conseguir escrever seu email no input de email;
+    * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
+    * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
+    * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
+    * A pessoa que joga deve conseguir escrever seu nome no input de texto
+    * A pessoa que joga deve conseguir escrever seu email no input de email
+    * O botão "Jogar" deve ser desabilitado caso email e/ou senha não estejam preenchidos
 
-1. O Botão no canto superior direito leva para a tela de configurações;
+1. A pessoa que joga deve ter acesso à tela de configurações através da tela inicial
 
-1. Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo;
+    * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
+    * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
 
-1. Ao clicar no botão "Jogar", uma requisição para a API do Trivia deve ser feita para pegar o token de jogador;
+1. A pessoa jogadora deve iniciar um jogo
 
-1. O token deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
+    * Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo
+    * Ao clicar no botão "Jogar", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
+    * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
+    * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
 
 #### Tela do jogo:
 
-1. O header deve conter a imagem de perfil vinda do Gravatar, o nome da pessoa (digitado na tela de início) e o placar zerado;
+1. O _header_ deve conter as informações da pessoa jogadora
 
-1. A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia;
+    * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
+    * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
+    * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-1. A categoria da pergunta e seu texto devem ser mostradas para a pessoa que está jogando. Essas informações devem vir dos campos category e question, respectivamente;
+1. A página deve conter as informações relacionadas à pergunta
 
-1. As alternativas devem ser mostradas em ordem aleatória, misturando as incorretas com a correta;
+    * A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia
+    * A categoria da pergunta (campo _category_) deve ser exibida em um elemento com o atributo `data-testid` com o valor `question-category` para a pessoa que está jogando
+    * O texto da pergunta (campo _question_) deve ser exibido em um elemento com o atributo `data-testid` com o valor `question-text` para a pessoa que está jogando
+    * O texto com as alternativas devem ser exibidos seguindo as regras abaixo:
+        * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
+        * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
+        * As alternativas devem ser exibidas em ordem aleatória
+        * Dica: utilize botões (<button/>) para as alternativas
 
-1. Só deve ser possível escolher uma resposta correta por pergunta;
+1. Só deve ser possível escolher uma resposta correta por pergunta
 
-1. Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível);
+1. Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas
+    * Utilize a propriedade css `border` com o valor `3px solid rbd(6, 240, 15)` para a alternativa correta.
+    * Utilize a propriedade css `border` com o valor `3px solid rbd(255, 0, 0)` para as alternativas incorretas.
 
-1. Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível);
+1. A pessoa que joga tem 30 segundos para responder cada pergunta
 
-1. Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas;
+    * Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada
+    * Respostas incorretas não somam pontos ao placar
+    * Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até zero
+    * Após o tempo se esgotar, todos os botões das alternativas devem ser desabilitados
 
-1. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando;
+1. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
-1. A pessoa que joga tem 30 segundos para responder cada pergunta. Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até o zero;
+    * Você deve salvar a pontuação **atual** no `localStorage`
+    * Leia a seção "Implementações técnicas" para mais detalhes
+    * Respostas erradas não devem somar ao placar
+    * A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`;
 
-1. A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`;
+1. Após a resposta ser dada, o botão "Próxima" deve aparecer
 
-1. Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada;
+    * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
+    * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
-1. Respostas incorretas não somam pontos ao placar;
+1. A pessoa que joga deve responder 5 perguntas no total
 
-1. Após a resposta ser dada, o botão "Próxima" deve aparecer. Ao clicar nesse botão, a próxima pergunta deve aparecer na tela;
-
-1. Após responder 5 perguntas, a pessoa que está jogando deve ser redirecionada para a tela de feedback;
-
-1. Caso a API retorne um response_code: 3 (token expirado), a pessoa que está jogando deve ser redirecionada para a tela de início, sem nenhuma informação prévia salva.
+    * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
+    * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Ranking_
+    * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
+    * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
 
 #### Tela de feedback:
 
-1. Deve-se mostrar o placar no header junto com o nome da pessoa que está jogando;
+1. O _header_ de _feedback_ deve conter as informações da pessoa jogadora
 
-1. A mensagem deve ser "Podia ser melhor..." caso a pessoa que está jogando acerte menos de 3 perguntas;
+    * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
+    * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
+    * O placar com o valor **atual** em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-1. A mensagem deve ser "Mandou bem!" caso a pessoa que está jogando acerte 3 perguntas ou mais;
+1. A pessoa deve ver a mensagem de _feedback_
+    * A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
+    * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
+    * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
-1. O placar da pessoa que está jogando também deve ser mostrado em uma mensagem de feedback;
+1. A pessoa jogadora deve ver as informações relacionadas aos resultados obtidos
 
-1. O número de perguntas que a pessoa que está jogando acertou deve ser mostrado;
+    * O placar final deve ser mostrado em um elemento com o atributo `data-testid` com o valor `feedback-total-score`
+    * O número de perguntas que a pessoa acertou deve ser exibido em um elemento com o atributo `data-testid` com o valor `feedback-total-question`
 
-1. Ao clicar no botão "Jogar novamente" a pessoa que está jogando deve ser redirecionada para a tela de início, sem nenhuma informação prévia salva;
+1. A pessoa jogadora tem a opção de jogar novamente
 
-1. Ao clicar no botão "Ver Ranking" a pessoa que está jogando deve ser redirecionada para a tela de ranking.
+    * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início
+    * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
+
+1. A pessoa jogadora tem a opção de visualizar a tela de _ranking_
+
+    * Ao clicar no botão "Ver Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
+    * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
+    * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
 #### Tela de ranking:
 
-1. Deve-se mostrar uma lista com a imagem de perfil vinda do Gravatar, nome e pontuação das pessoas que jogaram em ordem decrescente (da maior pontuação para a menor);
+1. Deve existir um botão para ir ao início
 
-1. O ranking deve ser armazenado no navegador através do `localStorage`.
+    * Esse botão deve possuir o atributo `data-testid` com o valor `btn-go-home`
+    * Esse botão deve enviar a pessoa para o início (tela de preenchimento dos dados)
 
-#### Tela de configurações:
+1. Apresentação do _ranking_
+
+    * Deve-se mostrar uma lista com a imagem de perfil vinda do Gravatar, nome e pontuação das pessoas que jogaram em ordem decrescente (da maior pontuação para a menor)
+    * Os elementos com os nomes das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-name-${index}`, onde `${index}` é iniciado em zero
+    * Os elementos com as pontuações das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-score-${index}`, onde `${index}` é iniciado em zero
+    * O ranking deve ser armazenado no navegador através do `localStorage`.
+    * Leia a seção "Implementações técnicas" para mais detalhes
+
+#### (Não avaliativo) Tela de configurações:
 
 1. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;
 
@@ -249,8 +297,6 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 1. Ao mudar o valor do dropdown tipo, apenas perguntas do tipo selecionado devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave type no retorno da API.
 
 ***Obs: A maneira como a API deve ser estruturada segue o seguinte modelo: https://opentdb.com/api_config.php***
-
-Além dos requisitos funcionais, a cobertura de testes deve atingir pelo menos **90%**.
 
 ---
 
@@ -261,7 +307,7 @@ Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de co
 **Player**
 
 No `localStorage` do navegador:
-* a chave `player` deve conter a seguinte estrutura:
+* a chave `state` deve conter a seguinte estrutura:
 ```
 player: {
     name,
@@ -270,6 +316,14 @@ player: {
     gravatarEmail
 }
 ```
+
+> `name` é o nome da pessoa que joga
+>
+> `assertions` é o número de acertos
+>
+> `score` é a pontuação
+>
+> `gravatarEmail` é o email da pessoa que joga
 
 * a chave `ranking` deve conter a seguinte estrutura:
 ```
@@ -287,9 +341,9 @@ player: {
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-02-block17-trivia-react-redux-1.git`.
+  * `git clone https://github.com/tryber/sd-0x-project-trivia-react-redux.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-02-block17-trivia-react-redux-1`
+    * `cd sd-0x-project-trivia-react-redux`
 
 2. Instale as dependências, inicialize o projeto e rode os testes
   * Instale as dependências:
@@ -322,23 +376,20 @@ player: {
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-movie-cards-library`
+  * Usando o exemplo anterior: `git push -u origin joaozinho-trivia`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-02-block17-trivia-react-redux-1/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-trivia-react-redux/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-02-block17-trivia-react-redux-1/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-trivia-react-redux/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
 ### DURANTE O DESENVOLVIMENTO
-
-* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
-
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
@@ -348,8 +399,8 @@ player: {
   1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
   2. `git add` _(para adicionar arquivos ao stage do Git)_
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  5. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  4. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
 
 ---
 
@@ -360,7 +411,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-02`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
@@ -370,8 +421,6 @@ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um vid
 
 ⚠⚠⚠
 
-À medida que você e os outros alunos forem entregando os projetos, vocês serão alertados **via Slack** para também fazer a revisão dos _Pull Requests_ dos seus colegas. Fiquem atentos às mensagens do _"Pull Reminders"_ no _Slack_!
-
-Os monitores também farão a revisão de todos os projetos, e irão avaliar tanto o seu _Pull Request_, quanto as revisões que você fizer nos _Pull Requests_ dos seus colegas!!!
+À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
 
 Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
