@@ -23,7 +23,7 @@ A pessoa que joga pode configurar algumas opções para o jogo em uma tela de co
 
 Você pode acessar um protótipo no link abaixo:
 
-https://www.figma.com/file/MxuXDNVbiZb69kM9NI0jhZ/Trivia-project?node-id=0%3A1
+https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1
 
 #### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI, só respeite os atributos `data-testid`, eles serão usados na correção do exercício.
 
