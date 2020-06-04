@@ -10,10 +10,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Cypress evaluator step
         id: cypress
-        uses: betrybe/cypress-evaluator-action@feature/react-redux-evaluator
+        uses: betrybe/cypress-evaluator-action@v3
         with:
           repository-test-name: 'betrybe/sd-0x-project-trivia-react-redux-tests'
-          repository-test-branch: 'configura-tests'
+          repository-test-branch: 'master'
+          npm-start: true
       - name: Store evaluation step
         uses: betrybe/store-evaluation-action@v2
         with:
