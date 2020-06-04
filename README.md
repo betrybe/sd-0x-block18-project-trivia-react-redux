@@ -288,7 +288,7 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * O ranking deve ser armazenado no navegador através do `localStorage`.
     * Leia a seção "Implementações técnicas" para mais detalhes
 
-#### Tela de configurações:
+#### (Não avaliativo) Tela de configurações:
 
 1. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;
 
@@ -297,8 +297,6 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 1. Ao mudar o valor do dropdown tipo, apenas perguntas do tipo selecionado devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave type no retorno da API.
 
 ***Obs: A maneira como a API deve ser estruturada segue o seguinte modelo: https://opentdb.com/api_config.php***
-
-Além dos requisitos funcionais, a cobertura de testes deve atingir pelo menos **90%**.
 
 ---
 
