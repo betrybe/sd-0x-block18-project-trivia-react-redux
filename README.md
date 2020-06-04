@@ -361,7 +361,7 @@ player: {
     * Exemplo: `git checkout master`
   * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
     * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-movie-card-library`
+    * Exemplo: `git checkout -b joaozinho-trivia`
 
 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
