@@ -240,7 +240,7 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 1. A pessoa que joga deve responder 5 perguntas no total
 
     * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
-    * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Ranking_
+    * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Feedback_
     * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
     * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
 
