@@ -210,7 +210,7 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
         * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
         * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
         * As alternativas devem ser exibidas em ordem aleatória
-        * Dica: utilize botões (<button/>) para as alternativas
+        * Dica: utilize botões (`<button/>`) para as alternativas
 
 1. Só deve ser possível escolher uma resposta correta por pergunta
 
