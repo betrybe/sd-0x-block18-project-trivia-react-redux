@@ -179,7 +179,7 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
     * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
     * A pessoa que joga deve conseguir escrever seu nome no input de texto
     * A pessoa que joga deve conseguir escrever seu email no input de email
-    * O botão "Jogar" deve ser desabilitado caso email e/ou senha não estejam preenchidos
+    * O botão "Jogar" deve ser desabilitado caso email e/ou nome não estejam preenchidos
 
 1. A pessoa que joga deve ter acesso à tela de configurações através da tela inicial
 
