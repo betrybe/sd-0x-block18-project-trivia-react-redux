@@ -210,7 +210,7 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
         * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
         * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
         * As alternativas devem ser exibidas em ordem aleatória
-        * Dica: utilize botões (<button/>) para as alternativas
+        * Dica: utilize botões (`<button/>`) para as alternativas
 
 1. Só deve ser possível escolher uma resposta correta por pergunta
 
@@ -240,7 +240,7 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 1. A pessoa que joga deve responder 5 perguntas no total
 
     * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
-    * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Ranking_
+    * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Feedback_
     * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
     * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
 
