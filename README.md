@@ -25,6 +25,8 @@ Você pode acessar um protótipo no link abaixo:
 
 https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1
 
+#### ⚠️ Sinta-se livre para alterar a UI. Só respeite os atributos `data-testid`; eles serão usados na correção do exercício.
+
 #### ⚠️ Para ver os comentários sobre cada componente, basta clicar no ícone de comentários no Figma (lado esquerdo superior).
 
 ![image](https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_400/v1575815877/Screenshot_2019-12-08_at_11.37.25_kzt7rl.png)
