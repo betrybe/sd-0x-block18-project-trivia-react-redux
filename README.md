@@ -213,8 +213,8 @@ Todos os elementos devem respeitar os atributos descritos no protótipo.
 1. Só deve ser possível escolher uma resposta correta por pergunta
 
 1. Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas
-    * Utilize a propriedade css `border` com o valor `3px solid rbd(6, 240, 15)` para a alternativa correta.
-    * Utilize a propriedade css `border` com o valor `3px solid rbd(255, 0, 0)` para as alternativas incorretas.
+    * Utilize a propriedade css `border` com o valor `3px solid rgb(6, 240, 15)` para a alternativa correta.
+    * Utilize a propriedade css `border` com o valor `3px solid rgb(255, 0, 0)` para as alternativas incorretas.
 
 1. A pessoa que joga tem 30 segundos para responder cada pergunta
 
