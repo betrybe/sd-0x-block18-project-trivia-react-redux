@@ -329,7 +329,7 @@ npm run lint
 
 ### Grupos de prioridade
 
-Os requisitos são organizados por grupos de prioridade. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
+Os requisitos são organizados por telas e grupos de prioridade. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
 
 - **Requisitos 1 e 2:** Prioridade 0 (Deve ser feito PRIMEIRO)
 - **Requisitos 3 a 5:** Prioridade 1 (Devem ser feitos APÓS OS REQUISITO 1 E 2, mas podem ser feitos em paralelo)
@@ -353,6 +353,8 @@ Os testes te darão uma mensagem de erro caso não estejam passando (seja qual f
 
 1. A pessoa que joga deve preencher as informações para iniciar um jogo
 
+  **PRIORIDADE 0** - Crie uma tela de login onde a pessoa deve preencher as informações para iniciar o jogo
+  
     * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
     * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
     * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
@@ -360,17 +362,22 @@ Os testes te darão uma mensagem de erro caso não estejam passando (seja qual f
     * A pessoa que joga deve conseguir escrever seu email no input de email
     * O botão "Jogar" deve ser desabilitado caso email e/ou nome não estejam preenchidos
 
-1. A pessoa que joga deve ter acesso à tela de configurações através da tela inicial
+2. A pessoa jogadora deve iniciar um jogo
 
-    * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
-    * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
-
-1. A pessoa jogadora deve iniciar um jogo
+  **PRIORIDADE 1** - Crie um botão "Jogar" para fazer requisição para a API e redirecionar a pessoa para tela de jogo
 
     * Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo
     * Ao clicar no botão "Jogar", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
     * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
     * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
+
+3. A pessoa que joga deve ter acesso à tela de configurações através da tela inicial
+
+  **PRIORIDADE 2** - Crie um botão que leva a pessoa para tela de configuração
+
+    * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
+    * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
+
 
 #### Tela do jogo:
 
@@ -380,7 +387,7 @@ Os testes te darão uma mensagem de erro caso não estejam passando (seja qual f
     * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
     * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-1. A página deve conter as informações relacionadas à pergunta
+2. A página deve conter as informações relacionadas à pergunta
 
     * A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia
     * A categoria da pergunta (campo _category_) deve ser exibida em um elemento com o atributo `data-testid` com o valor `question-category` para a pessoa que está jogando
@@ -391,32 +398,32 @@ Os testes te darão uma mensagem de erro caso não estejam passando (seja qual f
         * As alternativas devem ser exibidas em ordem aleatória
         * Dica: utilize botões (`<button/>`) para as alternativas
 
-1. Só deve ser possível escolher uma resposta correta por pergunta
+3. Só deve ser possível escolher uma resposta correta por pergunta
 
-1. Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas
+4. Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas
     * Utilize a propriedade css `border` com o valor `3px solid rgb(6, 240, 15)` para a alternativa correta.
     * Utilize a propriedade css `border` com o valor `3px solid rgb(255, 0, 0)` para as alternativas incorretas.
 
-1. A pessoa que joga tem 30 segundos para responder cada pergunta
+5. A pessoa que joga tem 30 segundos para responder cada pergunta
 
     * Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada
     * Respostas incorretas não somam pontos ao placar
     * Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até zero
     * Após o tempo se esgotar, todos os botões das alternativas devem ser desabilitados
 
-1. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
+6. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
     * Você deve salvar a pontuação **atual** no `localStorage`
     * Leia a seção "Implementações técnicas" para mais detalhes
     * Respostas erradas não devem somar ao placar
     * A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`;
 
-1. Após a resposta ser dada, o botão "Próxima" deve aparecer
+7. Após a resposta ser dada, o botão "Próxima" deve aparecer
 
     * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
     * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
-1. A pessoa que joga deve responder 5 perguntas no total
+8. A pessoa que joga deve responder 5 perguntas no total
 
     * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
     * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Feedback_
