@@ -4,22 +4,14 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir desse repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
-## O que deverá ser desenvolvido
+## O QUE DEVERÁ SER DESENVOLVIDO
 
-Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_.
+Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_, em um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. A partir dessas demandas, teremos uma aplicação onde os usuários poderão:
 
-O app começa com uma tela onde a pessoa que joga coloca seu nome e seu e-mail. O e-mail será usado para buscar a foto associada no site [Gravatar](https://pt.gravatar.com/) (se houver).
-
-Logo após, ela é redirecionada para o jogo onde deve escolher uma das respostas disponíveis para cada uma das perguntas. A resposta deve ser marcada antes de o contador de tempo chegar a zero, caso contrário a resposta deve ser considerada como errada.
-
-Cada acerto dá à pessoa que joga pontos que deverão ser computados num placar no header da aplicação.
-
-Após 5 perguntas respondidas, a pessoa que joga é redirecionada para uma tela de score, onde o texto mostrado vai depender do número de acertos.
-
-No final de cada jogo, a pessoa que joga pode acessar o ranking com as melhores pontuações.
-
-A pessoa que joga pode configurar algumas opções para o jogo em uma tela de configurações acessível a partir do header do app.
-
+    - Logar no jogo e, se o email tiver cadastro no site [Gravatar](https://pt.gravatar.com/), sua foto ficará associada.
+    - Acessar a página referente ao jogo, onde deverá escolher uma das respostas disponíveis para cada uma das perguntas. A resposta deve ser marcada antes do contador chegar a zero, caso contrário, a resposta deverá ser considerada errada. Após 5 perguntas respondidas, a pessoa é redirecionada para a tela de score, onde o texto mostrado depende do número de acertos.
+    - Visualizar a página de ranking, se quiser, ao final de cada jogo.
+    - Configurar algumas opções para o jogo em uma tela de configuração acessível a partir do header do app.
 
 Você pode acessar um protótipo no link abaixo:
 
@@ -33,14 +25,18 @@ https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1
 
 ---
 
-### Data de Entrega
+## COMO DESENVOLVER
 
-O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a avaliação final.
+Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Também conta com uma branch **main-group** para cada grupo, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2 e assim por diante. Após clonar o projeto e instalar as dependências, você precisará montar toda a configuração do Redux.
 
+* **Criar sua branch de desenvolvimento a partir da sua branch main**. Para isso, clone este repositório, faça o `git checkout main-group-XX && git pull` e em seguida o `git checkout -b main-group-XX-minha-feature`.
+* Para criar uma Pull Request para fazer **Code Review**, entitule-a `[GRUPO XX] Meu título` e **sempre aponte a Pull Request da sua branch para a branch `main-group-XX` do seu grupo, como no exemplo abaixo:**
 
-## Desenvolvimento e testes
+![Exemplo de como apontar uma Pull Request para a branch main do grupo](pull-request-para-branch-do-grupo.png)
 
-Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Após clonar o projeto e instalar as dependências, você precisará montar toda a configuração do Redux.
+* Quando várias pessoas desenvolvem para um mesmo projeto podem ocorrer **conflitos de merge** que precisarão ser resolvidos. Prestem atenção a isso!
+
+⚠ **ATENÇÃO! É POSSÍVEL COMMITAR, POR ENGANO, NA BRANCH DE OUTRO GRUPO, ENTÃO TOME MUITO CUIDADO** ⚠
 
 Para o projeto ser validado, todos os [testes E2E](https://www.guru99.com/end-to-end-testing.html) devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do [Cypress](https://www.cypress.io/how-it-works/) que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam.
 
