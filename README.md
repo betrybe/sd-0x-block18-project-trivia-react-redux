@@ -334,7 +334,6 @@ Os requisitos são organizados por grupos de prioridade. **Demandas de um grupo 
 - **Requisitos 1 e 2:** Prioridade 0 (Deve ser feito PRIMEIRO)
 - **Requisitos 3 a 5:** Prioridade 1 (Devem ser feitos APÓS OS REQUISITO 1 E 2, mas podem ser feitos em paralelo)
 - **Requisitos 5 a 7:** Prioridade 2 (Devem ser feitos APÓS OS REQUISITO 3 A 5, mas podem ser feitos em paralelo)
-...
 
 Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, necessariamente, do avanço de outra para poder acontecer.
 
