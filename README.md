@@ -434,45 +434,45 @@ Os testes te darão uma mensagem de erro caso não estejam passando (seja qual f
 
 1. O _header_ de _feedback_ deve conter as informações da pessoa jogadora
 
-    * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
-    * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
-    * O placar com o valor **atual** em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
+  * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
+  * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
+  * O placar com o valor **atual** em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
 1. A pessoa deve ver a mensagem de _feedback_
-    * A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
-    * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
-    * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
+* A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
+* A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
+* O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
 1. A pessoa jogadora deve ver as informações relacionadas aos resultados obtidos
 
-    * O placar final deve ser mostrado em um elemento com o atributo `data-testid` com o valor `feedback-total-score`
-    * O número de perguntas que a pessoa acertou deve ser exibido em um elemento com o atributo `data-testid` com o valor `feedback-total-question`
+  * O placar final deve ser mostrado em um elemento com o atributo `data-testid` com o valor `feedback-total-score`
+  * O número de perguntas que a pessoa acertou deve ser exibido em um elemento com o atributo `data-testid` com o valor `feedback-total-question`
 
 1. A pessoa jogadora tem a opção de jogar novamente
 
-    * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início
-    * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
+  * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início
+  * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
 
 1. A pessoa jogadora tem a opção de visualizar a tela de _ranking_
 
-    * Ao clicar no botão "Ver Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
-    * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
-    * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
+  * Ao clicar no botão "Ver Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
+  * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
+  * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
 #### Tela de ranking:
 
 1. Deve existir um botão para ir ao início
 
-    * Esse botão deve possuir o atributo `data-testid` com o valor `btn-go-home`
-    * Esse botão deve enviar a pessoa para o início (tela de preenchimento dos dados)
+  * Esse botão deve possuir o atributo `data-testid` com o valor `btn-go-home`
+  * Esse botão deve enviar a pessoa para o início (tela de preenchimento dos dados)
 
 1. Apresentação do _ranking_
 
-    * Deve-se mostrar uma lista com a imagem de perfil vinda do Gravatar, nome e pontuação das pessoas que jogaram em ordem decrescente (da maior pontuação para a menor)
-    * Os elementos com os nomes das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-name-${index}`, onde `${index}` é iniciado em zero
-    * Os elementos com as pontuações das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-score-${index}`, onde `${index}` é iniciado em zero
-    * O ranking deve ser armazenado no navegador através do `localStorage`.
-    * Leia a seção "Implementações técnicas" para mais detalhes
+  * Deve-se mostrar uma lista com a imagem de perfil vinda do Gravatar, nome e pontuação das pessoas que jogaram em ordem decrescente (da maior pontuação para a menor)
+  * Os elementos com os nomes das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-name-${index}`, onde `${index}` é iniciado em zero
+  * Os elementos com as pontuações das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-score-${index}`, onde `${index}` é iniciado em zero
+  * O ranking deve ser armazenado no navegador através do `localStorage`.
+  * Leia a seção "Implementações técnicas" para mais detalhes
 
 #### (Não avaliativo) Tela de configurações:
 
