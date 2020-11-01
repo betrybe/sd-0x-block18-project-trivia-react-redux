@@ -62,7 +62,7 @@ Através dessa aplicação, será possível realizar operações básicas de cri
 
   - Projeto individual.
 
-  - Serão dois dias de projeto.
+  - Serão cinco dias de projeto.
   
   - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
 
