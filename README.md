@@ -1,14 +1,32 @@
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
+
 # Boas vindas ao repositório do projeto de Trivia!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir desse repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
+## HABILIDADES
+
+Nesse projeto, você será capaz de:
+
+  - Criar um store Redux em aplicações React
+
+  - Criar reducers no Redux em aplicações React
+
+  - Criar actions no Redux em aplicações React
+
+  - Criar dispatchers no Redux em aplicações React
+
+  - Conectar Redux aos componentes React
+
+  - Criar actions assíncronas na sua aplicação React que faz uso de Redux.
+
 ## O QUE DEVERÁ SER DESENVOLVIDO
 
 Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_, em um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. A partir dessas demandas, teremos uma aplicação onde os usuários poderão:
 
-    - Logar no jogo e, se o email tiver cadastro no site [Gravatar](https://pt.gravatar.com/), sua foto ficará associada.
+    - Logar no jogo e, se o email tiver cadastro no site [Gravatar](https://pt.gravatar.com/), a foto será associada ao perfil do usuário.
     - Acessar a página referente ao jogo, onde deverá escolher uma das respostas disponíveis para cada uma das perguntas. A resposta deve ser marcada antes do contador chegar a zero, caso contrário, a resposta deverá ser considerada errada. Após 5 perguntas respondidas, a pessoa é redirecionada para a tela de score, onde o texto mostrado depende do número de acertos.
     - Visualizar a página de ranking, se quiser, ao final de cada jogo.
     - Configurar algumas opções para o jogo em uma tela de configuração acessível a partir do header do app.
@@ -134,10 +152,19 @@ Caso o token seja inválido, essa será a resposta da API:
 
 ### Gravatar
 
+O Gravatar é um serviço que permite deixar o avatar global a partir do email cadastrado, ele mostra sua foto cadastrada em qualquer site vinculado.
+
 Na tela de **Inicio**, a pessoa que joga pode colocar um e-mail que deve fazer uma consulta a API do [Gravatar](https://br.gravatar.com/site/implement/images/).
 
 A Implementação é feita baseada no e-mail. Esse email deve ser transformado em uma hash `MD5` (https://br.gravatar.com/site/implement/hash/),
 recomendamos utilizar o [CryptoJs](https://github.com/brix/crypto-js).
+
+Por exemplo:
+  - Instale o CryptoJS e importe o MD5: 
+    `import md5 from 'crypto-js/md5';`
+
+  - Converta o email do usuário:
+    `md5(emailDoUsuário)`
 
 Após a geração da hash, basta adicionar o valor gerado no final da URL:
 
@@ -148,20 +175,20 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 // Exemplo
 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
 ```
-
-Caso o e-mail não tenha uma foto vinculada ao Gravatar, exiba a imagem `default`:
+<!-- Ele já exibe o default por padrão -->
+<!-- Caso o e-mail não tenha uma foto vinculada ao Gravatar, exiba a imagem `default`:
 
 ```
-https://www.gravatar.com/avatar/2d3bf5b67282f5f466e503d7022abcf3
-```
+https://www.gravatar.com/avatar/2d3bf5b67282f5f466e503d7022abcf3 -->
+<!-- ``` -->
 
 Lembre-se de manter o `data-testid` correto.
 
 ---
 
-## Requisitos do projeto
+## REQUISITOS DO PROJETO
 
-⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate**.
+⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **EsLint**.
 
 Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking.
 
@@ -170,6 +197,33 @@ Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projeto
 Os requisitos do seu projeto são avaliados automaticamente, sendo utilizada a resolução `1366 x 768` (1366 pixels de largura por 768 pixels de altura). Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração dessa resolução.
 
 Todos os elementos devem respeitar os atributos descritos no protótipo.
+
+### Linter
+
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+
+```bash
+npm run lint
+```
+
+⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
+### Grupos de prioridade
+
+Os requisitos são organizados por grupos de prioridade. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
+
+- **Requisitos 1 e 2:** Prioridade 0 (Deve ser feito PRIMEIRO)
+- **Requisitos 3 a 5:** Prioridade 1 (Devem ser feitos APÓS OS REQUISITO 1 E 2, mas podem ser feitos em paralelo)
+- **Requisitos 5 a 7:** Prioridade 2 (Devem ser feitos APÓS OS REQUISITO 3 A 5, mas podem ser feitos em paralelo)
+...
+
+Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, necessariamente, do avanço de outra para poder acontecer.
+
+Além disso, temos um conjunto de cards menos prioritários (**Prioridade 5**) que não são contemplados pelo avaliador automático mas são funcionalidades que acrescentarão muito ao trabalho quando este for apresentado em um portfólio.
+
+### Execução de testes unitários
+
+Vamos utilizar o cypress para a execução de testes
 
 #### Tela de início:
 
