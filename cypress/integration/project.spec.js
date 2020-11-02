@@ -40,7 +40,7 @@ const BUTTON_PLAY_AGAIN_SELECTOR = '[data-testid="btn-play-again"]';
 
 // game
 
-describe('O _header_ deve conter as informações da pessoa jogadora', () => {
+describe('1 - [TELA DE JOGO] Crie um _header_ que deve conter as informações da pessoa jogadora', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -63,7 +63,7 @@ describe('O _header_ deve conter as informações da pessoa jogadora', () => {
   });
 });
 
-describe('A página deve conter as informações relacionadas à pergunta', () => {
+describe('2 - [TELA DE JOGO] Crie a página de jogo que deve conter as informações relacionadas à pergunta', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -86,7 +86,7 @@ describe('A página deve conter as informações relacionadas à pergunta', () =
   });
 });
 
-describe('Só deve ser possível escolher uma resposta correta por pergunta', () => {
+describe('3 - [TELA DE JOGO] Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -100,7 +100,7 @@ describe('Só deve ser possível escolher uma resposta correta por pergunta', ()
   });
 });
 
-describe('Ao clicar em uma resposta, a resposta correta deve ficar verde e as incorretas, vermelhas', () => {
+describe('4 - [TELA DE JOGO] Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -130,7 +130,7 @@ describe('Ao clicar em uma resposta, a resposta correta deve ficar verde e as in
   });
 });
 
-describe('A pessoa que joga tem 30 segundos para responder cada pergunta', () => {
+describe('5 - [TELA DE JOGO] Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -150,7 +150,7 @@ describe('A pessoa que joga tem 30 segundos para responder cada pergunta', () =>
   });
 });
 
-describe('Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando', () => {
+describe('6 - [TELA DE JOGO] Crie o placar com as seguintes características:', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -177,7 +177,7 @@ describe('Ao clicar na resposta correta, pontos devem ser somados no placar da p
   });
 });
 
-describe('Após a resposta ser dada, o botão "Próxima" deve aparecer', () => {
+describe('7 - [TELA DE JOGO] Crie um botão de "Próxima" que apareça após a resposta ser dada', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -202,7 +202,7 @@ describe('Após a resposta ser dada, o botão "Próxima" deve aparecer', () => {
   });
 });
 
-describe('A pessoa que joga deve responder 5 perguntas no total', () => {
+describe('8 - [TELA DE JOGO] Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -261,7 +261,7 @@ describe('A pessoa que joga deve responder 5 perguntas no total', () => {
 
 // home
 
-describe('A pessoa que joga deve preencher as informações para iniciar um jogo', () => {
+describe('9 - [TELA DE LOGIN] Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
   });
@@ -295,7 +295,7 @@ describe('A pessoa que joga deve preencher as informações para iniciar um jogo
   });
 });
 
-describe('A pessoa que joga deve ter acesso à tela de configurações através da tela inicial', () => {
+describe('10 - [TELA DE LOGIN] Crie um botão na tela inicial que leve para a tela de configurações', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
   });
@@ -310,7 +310,7 @@ describe('A pessoa que joga deve ter acesso à tela de configurações através 
   });
 });
 
-describe('A pessoa jogadora deve iniciar um jogo', () => {
+describe('11 - [TELA DE LOGIN] Crie o botão de iniciar o jogo', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -327,7 +327,7 @@ describe('A pessoa jogadora deve iniciar um jogo', () => {
 
 // ranking
 
-describe('Deve existir um botão para ir ao início', () => {
+describe('12 - [TELA DE RANKING] Crie um botão para ir ao início', () => {
   it('volta para a tela inicial', () => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -350,7 +350,7 @@ describe('Deve existir um botão para ir ao início', () => {
   });
 });
 
-describe('Apresentação do _ranking_', () => {
+describe('13 - [TELA DE RANKING] Crie a tela de _ranking_', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -451,7 +451,7 @@ describe('Apresentação do _ranking_', () => {
 
 // feedback
 
-describe('O _header_ de _feedback_ deve conter as informações da pessoa jogadora', () => {
+describe('14 - [TELA DE FEEDBACK] Desenvolva o header de _feedback_ que deve conter as informações da pessoa jogadora', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -486,7 +486,7 @@ describe('O _header_ de _feedback_ deve conter as informações da pessoa jogado
   });
 });
 
-describe('A pessoa deve ver a mensagem de _feedback_', () => {
+describe('15 - [TELA DE FEEDBACK] Crie a mensagem de _feedback_ para ser exibida a pessoa usuária', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -538,7 +538,7 @@ describe('A pessoa deve ver a mensagem de _feedback_', () => {
   });
 });
 
-describe('A pessoa jogadora deve ver as informações relacionadas aos resultados obtidos', () => {
+describe('16 - [TELA DE FEEDBACK] Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -611,7 +611,7 @@ describe('A pessoa jogadora deve ver as informações relacionadas aos resultado
   });
 });
 
-describe('A pessoa jogadora tem a opção de jogar novamente', () => {
+describe('17 - [TELA DE FEEDBACK] Crie a opção para a pessoa jogadora poder jogar novamente', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -636,7 +636,7 @@ describe('A pessoa jogadora tem a opção de jogar novamente', () => {
   });
 });
 
-describe('A pessoa jogadora tem a opção de visualizar a tela de _ranking_', () => {
+describe('18 - [TELA DE FEEDBACK] Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
