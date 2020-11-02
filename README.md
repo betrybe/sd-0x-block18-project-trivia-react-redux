@@ -6,6 +6,8 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir desse repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
+---
+
 ## HABILIDADES
 
 Nesse projeto, você será capaz de:
@@ -22,15 +24,9 @@ Nesse projeto, você será capaz de:
 
   - Criar actions assíncronas na sua aplicação React que faz uso de Redux.
 
-## Entregáveis
-
-Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
-
-Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
-
 ---
 
-### O que deverá ser desenvolvido
+## O QUE DEVERÁ SER DESENVOLVIDO
 
 Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_. Para viver um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. A partir dessas demandas, teremos uma aplicação onde a pessoa usuária poderá:
 
@@ -40,35 +36,25 @@ Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Tri
   - Visualizar a página de ranking, se quiser, ao final de cada jogo.
   - Configurar algumas opções para o jogo em uma tela de configuração acessível a partir do cabeçalho do app.
 
-Você pode acessar um protótipo no link abaixo:
+Você pode acessar um protótipo completo da interface desejada para o projeto no link abaixo:
 
 https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1
 
-#### ⚠️ Sinta-se livre para alterar a UI. Só respeite os atributos `data-testid`; eles serão usados na correção do exercício.
-
-#### ⚠️ Para ver os comentários sobre cada componente, basta clicar no ícone de comentários no Figma (lado esquerdo superior).
-
-![image](https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_400/v1575815877/Screenshot_2019-12-08_at_11.37.25_kzt7rl.png)
+**Sinta-se livre para alterar a UI.** Só respeite as restrições de cada requisito - elas serão usados na correção.
 
 ---
 
-## Desenvolvimento
-
-Você deve desenvolver uma aplicação em React que use Redux como ferramenta de manipulação de estado.
-
-Através dessa aplicação, será possível realizar operações básicas de criação e manipulação de um estado em Redux.
-
-### Data de Entrega
+## DATA DE ENTREGA
 
   - Projeto em grupo.
 
   - Serão cinco dias de projeto.
-  
+
   - O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
-## Instruções para entregar seu projeto:
+## COMO DESENVOLVER
 
 Este repositório **já conta com uma `main-group` para cada grupo**, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
 
@@ -81,7 +67,7 @@ Este repositório **já conta com uma `main-group` para cada grupo**, identifica
 
 ⚠ **ATENÇÃO! É POSSÍVEL COMMITAR, POR ENGANO, NA BRANCH DE OUTRO GRUPO, ENTÃO TOME MUITO CUIDADO** ⚠
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+### Antes de começar a desenvolver:
 
 1. Clone o repositório
   * `git clone git@github.com:tryber/sd-0x-project-trivia-react-redux.git`.
@@ -120,7 +106,7 @@ Este repositório **já conta com uma `main-group` para cada grupo**, identifica
   * Usando o exemplo anterior: `git push -u origin main-group-XX-cria-campo-de-input`
 
 6. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-06-project-trivia-react-redux/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-trivia-react-redux/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a branch do grupo, `main-group-XX`, e a sua branch **com atenção**
   * Coloque um título para a sua _Pull Request_
@@ -128,62 +114,37 @@ Este repositório **já conta com uma `main-group` para cada grupo**, identifica
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-06-project-trivia-react-redux/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-trivia-react-redux/pulls) e confira que o seu _Pull Request_ está criado
 
 7. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Linter_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
 
----
+## REQUISITOS DO PROJETO
 
-### DURANTE O DESENVOLVIMENTO
+Para o bom andamento deste projeto disponibilizamos, além do README a seguir, um _quadro Kanban_ com as demandas a realizar para o projeto ser concluído com sucesso. Confira o _Slack_ para saber como acessar o quadro! É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará.
 
-* Faça `commits` das alterações que você fizer no código regularmente
+Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Ele também conta com uma branch **main-group** para cada grupo, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2 e assim por diante.
 
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+### Linter
 
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
 
----
+```bash
+npm run lint
+```
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
-Para **"entregar"** seu projeto, siga os passos a seguir:
+### Execução de testes de requisito
 
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+Os testes deste projeto foram feitos utilizando o [Cypress](https://www.cypress.io/how-it-works/). É utilizada nos testes a resolução `1366 x 768` (1366 pixels de largura por 768 pixels de altura) para testes de layout. Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração dessa resolução, por exemplo.
 
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+Para o projeto ser validado, todos os testes de comportamento devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do Cypress que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam. Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
 
----
+Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
 
-### REVISANDO UM PULL REQUEST
+**Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
 
-⚠⚠⚠
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
-## COMO DESENVOLVER
-
-Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Também conta com uma branch **main-group** para cada grupo, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2 e assim por diante. Após clonar o projeto e instalar as dependências, você precisará montar toda a configuração do Redux.
-
-* **Criar sua branch de desenvolvimento a partir da sua branch main**. Para isso, clone este repositório, faça o `git checkout main-group-XX && git pull` e em seguida o `git checkout -b main-group-XX-minha-feature`.
-* Para criar uma Pull Request para fazer **Code Review**, entitule-a `[GRUPO XX] Meu título` e **sempre aponte a Pull Request da sua branch para a branch `main-group-XX` do seu grupo, como no exemplo abaixo:**
-
-![Exemplo de como apontar uma Pull Request para a branch main do grupo](pull-request-para-branch-do-grupo.png)
-
-* Quando várias pessoas desenvolvem para um mesmo projeto podem ocorrer **conflitos de merge** que precisarão ser resolvidos. Prestem atenção a isso!
-
-⚠ **ATENÇÃO! É POSSÍVEL COMMITAR, POR ENGANO, NA BRANCH DE OUTRO GRUPO, ENTÃO TOME MUITO CUIDADO** ⚠
-
-### Trivia API
+### API de Trivia
 
 A [API do Trivia](https://opentdb.com/api_config.php) é bem simples. Temos 2 endpoints que vamos precisar utilizar para esse exercício.
 
@@ -196,7 +157,7 @@ Primeiro, é necessário fazer um GET request para:
 https://opentdb.com/api_token.php?command=request
 ```
 
-Esse endpoint te retornará o token que vai ser utilizado nas requisições seguintes. Esse token expira em 6 horas e te retornará um `response_code: 3` caso esteja expirado.
+Esse endpoint te retornará o token que vai ser utilizado nas requisições seguintes. Esse token expira em 6 horas e te retornará um `response_code: 3` caso esteja expirado. **Atenção para que seu código contemple isso!**
 
 ```
 {
@@ -214,9 +175,7 @@ https://opentdb.com/api.php?amount=${quantidade-de-perguntas-retornadas}&token=$
 https://opentdb.com/api.php?amount=5&token=${seu-token-aqui}
 ```
 
-Recomendamos pedir 5 perguntas de uma vez e controlar a disposição delas no código.
-
-Essa API te retorna as perguntas no seguinte formato:
+Recomendamos pedir 5 perguntas de uma vez e controlar a disposição delas no código. Essa API te retorna as perguntas no seguinte formato:
 
 ```
 // tipo múltipla escolha
@@ -240,7 +199,7 @@ Essa API te retorna as perguntas no seguinte formato:
 ```
 
 ```
-// tipo booleana
+// tipo verdadeiro ou falso
 {
    "response_code":0,
    "results":[
@@ -279,7 +238,7 @@ A Implementação é feita baseada no e-mail. Esse email deve ser transformado e
 recomendamos utilizar o [CryptoJs](https://github.com/brix/crypto-js).
 
 Por exemplo:
-  - Instale o CryptoJS e importe o MD5: 
+  - Garantida a instalação do CryptoJS no projeto, importe o MD5:
     `import md5 from 'crypto-js/md5';`
 
   - Converta o email do usuário:
@@ -288,10 +247,13 @@ Por exemplo:
 Após a geração da hash, basta adicionar o valor gerado no final da URL:
 
 ```
+// Formato de URL necessário:
 https://www.gravatar.com/avatar/HASH-GERADA
-// Exemplo
+
+// Exemplo de URL com hash de uma pessoa
 https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
-// Exemplo
+
+// Exemplo de imagem exibida com a URL
 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
 ```
 <!-- Ele já exibe o default por padrão -->
@@ -301,32 +263,6 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 https://www.gravatar.com/avatar/2d3bf5b67282f5f466e503d7022abcf3 -->
 <!-- ``` -->
 
-Lembre-se de manter o `data-testid` correto.
-
----
-
-## REQUISITOS DO PROJETO
-
-⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **EsLint**.
-
-Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking.
-
-Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projetos nas ferramentas do React como o Router, Link, Redux e testes para ajudá-los a completar os requisitos.
-
-Os requisitos do seu projeto são avaliados automaticamente, sendo utilizada a resolução `1366 x 768` (1366 pixels de largura por 768 pixels de altura). Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração dessa resolução.
-
-Todos os elementos devem respeitar os atributos descritos no protótipo.
-
-### Linter
-
-Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
-
-```bash
-npm run lint
-```
-
-⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
-
 ### Grupos de prioridade
 
 Os requisitos são organizados por telas e grupos de prioridade. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
@@ -335,28 +271,56 @@ Os requisitos são organizados por telas e grupos de prioridade. **Demandas de u
 - **Requisitos 3 a 5:** Prioridade 1 (Devem ser feitos APÓS OS REQUISITO 1 E 2, mas podem ser feitos em paralelo)
 - **Requisitos 5 a 7:** Prioridade 2 (Devem ser feitos APÓS OS REQUISITO 3 A 5, mas podem ser feitos em paralelo)
 
-Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, necessariamente, do avanço de outra para poder acontecer.
+Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, necessariamente, do avanço de outra para poder acontecer. **Ainda que siga a ordem de prioridade, no entanto, conflitos podem ocorrer a depender de como for feita a implementação do projeto, então é importante que o grupo faça esse alinhamento constantemente!**
 
-Além disso, temos um conjunto de cards menos prioritários (**Prioridade 5**) que não são contemplados pelo avaliador automático mas são funcionalidades que acrescentarão muito ao trabalho quando este for apresentado em um portfólio.
+### Observações técnicas
 
-### Execução de testes unitários
+Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de correção funcionem corretamente.
 
-Para o projeto ser validado, todos os [testes E2E](https://www.guru99.com/end-to-end-testing.html) devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do [Cypress](https://www.cypress.io/how-it-works/) que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam.
+**Player**
 
-Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
+No `localStorage` do navegador:
+* A chave `state` deve conter a seguinte estrutura:
+```
+player: {
+    name,
+    assertions,
+    score,
+    gravatarEmail
+}
+```
 
-Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nos atributos definidos no protótipo.
+> `name` é o nome da pessoa que joga
+>
+> `assertions` é o número de acertos
+>
+> `score` é a pontuação
+>
+> `gravatarEmail` é o email da pessoa que joga
 
-Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
+* A chave `ranking` deve conter a seguinte estrutura:
+```
+[
+  { name: nome-da-pessoa, score: 10, picture: url-da-foto-no-gravatar }
+]
+```
 
-**Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
+* A chave `token` deve conter o valor do token recebido na API do Trivia.
+
+---
+
+
+### LISTA DE REQUISITOS
+---
+
+Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking. Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projetos nas ferramentas do React como o Router, Link, Redux e testes para ajudá-los a completar os requisitos.
 
 #### Tela de início:
 
 1. A pessoa que joga deve preencher as informações para iniciar um jogo
 
   **PRIORIDADE 0** - Crie uma tela de login onde a pessoa deve preencher as informações para iniciar o jogo
-  
+
     * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
     * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
     * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
@@ -490,43 +454,49 @@ Os testes te darão uma mensagem de erro caso não estejam passando (seja qual f
 
 ---
 
-### Implementações técnicas
-
-Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de correção funcionem corretamente.
-
-**Player**
-
-No `localStorage` do navegador:
-* a chave `state` deve conter a seguinte estrutura:
-```
-player: {
-    name,
-    assertions,
-    score,
-    gravatarEmail
-}
-```
-
-> `name` é o nome da pessoa que joga
->
-> `assertions` é o número de acertos
->
-> `score` é a pontuação
->
-> `gravatarEmail` é o email da pessoa que joga
-
-* a chave `ranking` deve conter a seguinte estrutura:
-```
-[
-    {name: nome-da-pessoa, score: 10, picture: url-da-foto-no-gravatar}
-]
-```
-
-* a chave `token` deve conter o valor do token recebido na API do Trivia.
+## Instruções para entregar seu projeto:
 
 ---
 
-# Avisos Finais
+### DURANTE O DESENVOLVIMENTO
+
+* Faça `commits` das alterações que você fizer no código regularmente
+
+* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+
+* Os comandos que você utilizará com mais frequência são:
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+  2. `git add` _(para adicionar arquivos ao stage do Git)_
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+---
+
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+
+Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+### REVISANDO UM PULL REQUEST
+
+⚠⚠⚠
+
+À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
+
+Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+
+---
+
+# AVISOS FINAIS
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
