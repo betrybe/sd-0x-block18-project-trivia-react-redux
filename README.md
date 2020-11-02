@@ -42,7 +42,7 @@ Nesse projeto, você será capaz de:
   - [Observações técnicas](#observações-tecnicas)
 - [Lista de requisitos](#lista-de-requisitos)
   - [Tela de início](#tela-de-inicio)
-    - [](#)
+    - [1 - Crie a tela de login](#1-crie-a-tela-de-login-onde-a-pessoa-que-joga-deve-preencher-as-informações-para-iniciar-um-jogo)
     - [](#)
     - [](#)
     - [](#)
@@ -357,7 +357,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de início
 
-##### 1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
+##### 1. CRIE A TELA DE LOGIN, ONDE A PESSOA QUE JOGA DEVE PREENCHER AS INFORMAÇÕES PARA INICIAR UM JOGO
 
   * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
   * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
@@ -366,7 +366,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * A pessoa que joga deve conseguir escrever seu email no input de email
   * O botão "Jogar" deve ser desabilitado caso email e/ou nome não estejam preenchidos
 
-2. Crie o botão de iniciar o jogo
+##### 2. CRIE O BOTÃO DE INICIAR O JOGO
 
   O botão "Jogar" para fazer requisição para a API e redirecionar a pessoa para tela de jogo
 
@@ -375,7 +375,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
   * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
 
-3. Crie um botão que leva a pessoa para tela de configuração
+##### 3. CRIE UM BOTÃO QUE LEVA A PESSOA PARA TELA DE CONFIGURAÇÃO
 
   * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
   * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
@@ -383,13 +383,13 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de jogo
 
-4. Crie um _header_ que deve conter as informações da pessoa jogadora
+##### 4. CRIE UM _HEADER_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
 
   * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
   * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
   * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-5. Crie a página de jogo que deve conter as informações relacionadas à pergunta
+##### 5. CRIE A PÁGINA DE JOGO QUE DEVE CONTER AS INFORMAÇÕES RELACIONADAS À PERGUNTA
 
   * A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia
   * A categoria da pergunta (campo _category_) deve ser exibida em um elemento com o atributo `data-testid` com o valor `question-category` para a pessoa que está jogando
@@ -400,14 +400,14 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
     * As alternativas devem ser exibidas em ordem aleatória
     * Dica: utilize botões (`<button/>`) para as alternativas
 
-6. Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta
+##### 6. DESENVOLVA O JOGO ONDE SÓ DEVE SER POSSÍVEL ESCOLHER UMA RESPOSTA CORRETA POR PERGUNTA
 
-7. Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas
+##### 7. DESENVOLVA O ESTILO QUE, AO CLICAR EM UMA RESPOSTA, A CORRETA DEVE FICAR VERDE E AS INCORRETAS, VERMELHAS
 
   * Utilize a propriedade css `border` com o valor `3px solid rgb(6, 240, 15)` para a alternativa correta.
   * Utilize a propriedade css `border` com o valor `3px solid rgb(255, 0, 0)` para as alternativas incorretas.
 
-8. Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder
+##### 8. DESENVOLVA UM TIMER ONDE A PESSOA QUE JOGA TEM 30 SEGUNDOS PARA RESPONDER
 
   * Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada
   * Respostas incorretas não somam pontos ao placar
@@ -416,7 +416,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
   Dica: Lembre-se do setTimeout e do setInterval
 
-9. Crie o placar com as seguintes características:
+##### 9. CRIE O PLACAR COM AS SEGUINTES CARACTERÍSTICAS:
 
   Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
@@ -425,12 +425,12 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Respostas erradas não devem somar ao placar
   * A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`
 
-10. Crie um botão de "Próxima" que apareça após a resposta ser dada
+##### 10. CRIE UM BOTÃO DE "PRÓXIMA" QUE APAREÇA APÓS A RESPOSTA SER DADA
 
   * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
   * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
-11. Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total
+##### 11. DESENVOLVA O JOGO DE FORMA QUE A PESSOA QUE JOGA DEVE RESPONDER 5 PERGUNTAS NO TOTAL
 
   * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
   * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Feedback_
@@ -439,29 +439,29 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de feedback
 
-12. Desenvolva o header de _feedback_ que deve conter as informações da pessoa jogadora
+##### 12. DESENVOLVA O HEADER DE _FEEDBACK_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
 
   * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
   * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
   * O placar com o valor **atual** em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-13. Crie a mensagem de _feedback_ para ser exibida a pessoa usuária
+##### 13. CRIE A MENSAGEM DE _FEEDBACK_ PARA SER EXIBIDA A PESSOA USUÁRIA
 
   * A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
   * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
   * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
-14. Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária
+##### 14. EXIBA AS INFORMAÇÕES RELACIONADAS AOS RESULTADOS OBTIDOS PARA A PESSOA USUÁRIA
 
   * O placar final deve ser mostrado em um elemento com o atributo `data-testid` com o valor `feedback-total-score`
   * O número de perguntas que a pessoa acertou deve ser exibido em um elemento com o atributo `data-testid` com o valor `feedback-total-question`
 
-15. Crie a opção para a pessoa jogadora poder jogar novamente
+##### 15. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER JOGAR NOVAMENTE
 
   * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início
   * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
 
-16. Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_
+##### 16. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER VISUALIZAR A TELA DE _RANKING_
 
   * Ao clicar no botão "Ver Ranking", a pessoa deve ser redirecionada para a tela de _ranking_
   * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
@@ -469,12 +469,12 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de ranking
 
-17. Crie um botão para ir ao início
+##### 17. CRIE UM BOTÃO PARA IR AO INÍCIO
 
   * Esse botão deve possuir o atributo `data-testid` com o valor `btn-go-home`
   * Esse botão deve enviar a pessoa para o início (tela de preenchimento dos dados)
 
-18. Crie a tela de _ranking_
+##### 18. CRIE A TELA DE _RANKING_
 
   * Deve-se mostrar uma lista com a imagem de perfil vinda do Gravatar, nome e pontuação das pessoas que jogaram em ordem decrescente (da maior pontuação para a menor)
   * Os elementos com os nomes das pessoas que jogaram devem possuir o atributo `data-testid` com o valor `player-name-${index}`, onde `${index}` é iniciado em zero
@@ -484,11 +484,11 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### EXTRA NÃO AVALIATIVO: Tela de configurações
 
-19. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;
+##### 19. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;
 
-20. Ao mudar o valor do dropdown dificuldade, apenas perguntas da dificuldade selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave difficulty no retorno da API;
+##### 20. Ao mudar o valor do dropdown dificuldade, apenas perguntas da dificuldade selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave difficulty no retorno da API;
 
-21. Ao mudar o valor do dropdown tipo, apenas perguntas do tipo selecionado devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave type no retorno da API.
+##### 21. Ao mudar o valor do dropdown tipo, apenas perguntas do tipo selecionado devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave type no retorno da API.
 
 ***Obs: A maneira como a API deve ser estruturada segue o seguinte modelo: https://opentdb.com/api_config.php***
 
