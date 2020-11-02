@@ -355,7 +355,7 @@ player: {
 
 Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking. Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projetos nas ferramentas do React como o Router, Link, Redux e testes para ajudá-los a completar os requisitos.
 
-#### Tela de início
+### Tela de início
 
 1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
 
@@ -381,7 +381,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
 
 
-#### Tela de jogo
+### Tela de jogo
 
 4. Crie um _header_ que deve conter as informações da pessoa jogadora
 
@@ -437,7 +437,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
   * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
 
-#### Tela de feedback
+### Tela de feedback
 
 12. Desenvolva o header de _feedback_ que deve conter as informações da pessoa jogadora
 
@@ -467,7 +467,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
   * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
-#### Tela de ranking
+### Tela de ranking
 
 17. Crie um botão para ir ao início
 
@@ -482,7 +482,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O ranking deve ser armazenado no navegador através do `localStorage`.
   * Leia a seção "Implementações técnicas" para mais detalhes
 
-#### EXTRA NÃO AVALIATIVO: Tela de configurações
+### EXTRA NÃO AVALIATIVO: Tela de configurações
 
 19. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;
 
