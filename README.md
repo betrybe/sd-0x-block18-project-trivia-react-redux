@@ -50,7 +50,7 @@ Você pode acessar um protótipo completo da interface desejada para o projeto n
 
   - Serão cinco dias de projeto.
 
-  - O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a avaliação final.
+  - O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h` para ter entregue a avaliação final.
 
 ---
 
@@ -122,6 +122,8 @@ Este repositório **já conta com uma `main-group` para cada grupo**, identifica
 
 Para o bom andamento deste projeto disponibilizamos, além do README a seguir, um _quadro Kanban_ com as demandas a realizar para o projeto ser concluído com sucesso. Confira o _Slack_ para saber como acessar o quadro! É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará.
 
+Além disso, você verá que os requisitos do projeto tem, além das observações técnicas e do que será validado, descrições tais quais se veriam em um projeto real. **É muito importante ser capaz de ler descrições como essa e transformá-las em produtos ou, se houver dúvida, saber tirar tais dúvidas!** Seguimos à disposição no Slack para isso.
+
 Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Ele também conta com uma branch **main-group** para cada grupo, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2 e assim por diante.
 
 ### Linter
@@ -157,7 +159,7 @@ Primeiro, é necessário fazer um GET request para:
 https://opentdb.com/api_token.php?command=request
 ```
 
-Esse endpoint te retornará o token que vai ser utilizado nas requisições seguintes. Esse token expira em 6 horas e te retornará um `response_code: 3` caso esteja expirado. **Atenção para que seu código contemple isso!**
+Esse endpoint te retornará o token que vai ser utilizado nas requisições seguintes. A resposta dele será:
 
 ```
 {
@@ -171,6 +173,7 @@ Paga pegar as perguntas, você deve realizar um GET request para o seguinte endp
 
 ```
 https://opentdb.com/api.php?amount=${quantidade-de-perguntas-retornadas}&token=${seu-token-aqui}
+
 // Recomendação
 https://opentdb.com/api.php?amount=5&token=${seu-token-aqui}
 ```
@@ -178,7 +181,7 @@ https://opentdb.com/api.php?amount=5&token=${seu-token-aqui}
 Recomendamos pedir 5 perguntas de uma vez e controlar a disposição delas no código. Essa API te retorna as perguntas no seguinte formato:
 
 ```
-// tipo múltipla escolha
+// Pergunta de múltipla escolha
 {
    "response_code":0,
    "results":[
@@ -199,7 +202,7 @@ Recomendamos pedir 5 perguntas de uma vez e controlar a disposição delas no c�
 ```
 
 ```
-// tipo verdadeiro ou falso
+// Pergunta de verdadeiro ou falso
 {
    "response_code":0,
    "results":[
@@ -216,8 +219,7 @@ Recomendamos pedir 5 perguntas de uma vez e controlar a disposição delas no c�
    ]
 }
 ```
-
-Caso o token seja inválido, essa será a resposta da API:
+O token expira em 6 horas e te retornará um `response_code: 3` caso esteja expirado. **Atenção para que seu código contemple isso!** Caso o token seja inválido, essa será a resposta da API:
 
 ```
 {
@@ -230,12 +232,9 @@ Caso o token seja inválido, essa será a resposta da API:
 
 ### Gravatar
 
-O Gravatar é um serviço que permite deixar o avatar global a partir do email cadastrado, ele mostra sua foto cadastrada em qualquer site vinculado.
+O Gravatar é um serviço que permite deixar o avatar global a partir do email cadastrado, ele mostra sua foto cadastrada em qualquer site vinculado. Na tela de **Inicio**, a pessoa que joga pode colocar um e-mail que deve fazer uma consulta a API do [Gravatar](https://br.gravatar.com/site/implement/images/).
 
-Na tela de **Inicio**, a pessoa que joga pode colocar um e-mail que deve fazer uma consulta a API do [Gravatar](https://br.gravatar.com/site/implement/images/).
-
-A Implementação é feita baseada no e-mail. Esse email deve ser transformado em uma hash `MD5` (https://br.gravatar.com/site/implement/hash/),
-recomendamos utilizar o [CryptoJs](https://github.com/brix/crypto-js).
+A Implementação é feita baseada no e-mail. Esse email deve ser transformado em uma hash `MD5` (https://br.gravatar.com/site/implement/hash/). Para gerar tal hash, recomendamos utilizar o [CryptoJs](https://github.com/brix/crypto-js).
 
 Por exemplo:
   - Garantida a instalação do CryptoJS no projeto, importe o MD5:
@@ -248,20 +247,15 @@ Após a geração da hash, basta adicionar o valor gerado no final da URL:
 
 ```
 // Formato de URL necessário:
-https://www.gravatar.com/avatar/HASH-GERADA
+https://www.gravatar.com/avatar/${hash-gerada}
 
 // Exemplo de URL com hash de uma pessoa
 https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 
 // Exemplo de imagem exibida com a URL
 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
-```
-<!-- Ele já exibe o default por padrão -->
-<!-- Caso o e-mail não tenha uma foto vinculada ao Gravatar, exiba a imagem `default`:
 
 ```
-https://www.gravatar.com/avatar/2d3bf5b67282f5f466e503d7022abcf3 -->
-<!-- ``` -->
 
 ### Grupos de prioridade
 
@@ -456,8 +450,6 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ## Instruções para entregar seu projeto:
 
----
-
 ### DURANTE O DESENVOLVIMENTO
 
 * Faça `commits` das alterações que você fizer no código regularmente
@@ -487,8 +479,6 @@ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um vid
 ---
 
 ### REVISANDO UM PULL REQUEST
-
-⚠⚠⚠
 
 À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
 
