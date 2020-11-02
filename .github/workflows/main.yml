@@ -17,9 +17,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Evaluator step
         id: evaluator
-        uses: betrybe/react-scripts-evaluator-action@v3
+        uses: betrybe/react-scripts-evaluator-action@v4
         with:
-          repository-test-name: 'betrybe/sd-0x-block15-project-trivia-react-redux'
+          repository-test-name: 'betrybe/sd-0x-project-trivia-react-redux-tests'
           repository-test-branch: 'master'
       - name: Store evaluation step
         uses: betrybe/store-evaluation-action@v2
