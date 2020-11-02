@@ -377,42 +377,42 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 3. Crie um botão que leva a pessoa para tela de configuração
 
-    * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
-    * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
+  * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
+  * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
 
 
 #### Tela de jogo
 
 4. Crie um _header_ que deve conter as informações da pessoa jogadora
 
-    * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
-    * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
-    * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
+  * A imagem do perfil vinda do Gravatar em um elemento que deve possuir o atributo `data-testid` com o valor `header-profile-picture`
+  * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
+  * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
 5. Crie a página de jogo que deve conter as informações relacionadas à pergunta
 
-    * A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia
-    * A categoria da pergunta (campo _category_) deve ser exibida em um elemento com o atributo `data-testid` com o valor `question-category` para a pessoa que está jogando
-    * O texto da pergunta (campo _question_) deve ser exibido em um elemento com o atributo `data-testid` com o valor `question-text` para a pessoa que está jogando
-    * O texto com as alternativas devem ser exibidos seguindo as regras abaixo:
-        * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
-        * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
-        * As alternativas devem ser exibidas em ordem aleatória
-        * Dica: utilize botões (`<button/>`) para as alternativas
+  * A pergunta e suas alternativas de resposta devem ser recebidas da API do Trivia
+  * A categoria da pergunta (campo _category_) deve ser exibida em um elemento com o atributo `data-testid` com o valor `question-category` para a pessoa que está jogando
+  * O texto da pergunta (campo _question_) deve ser exibido em um elemento com o atributo `data-testid` com o valor `question-text` para a pessoa que está jogando
+  * O texto com as alternativas devem ser exibidos seguindo as regras abaixo:
+    * O elemento com a alternativa correta deve possuir o atributo `data-testid` com o valor `correct-answer`
+    * Os elementos com as alternativas incorretas devem possuir o atributo `data-testid` com o valor `wrong-answer-${index}`, com `${index}` iniciando com o valor `0`
+    * As alternativas devem ser exibidas em ordem aleatória
+    * Dica: utilize botões (`<button/>`) para as alternativas
 
 6. Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta
 
 7. Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas
 
-    * Utilize a propriedade css `border` com o valor `3px solid rgb(6, 240, 15)` para a alternativa correta.
-    * Utilize a propriedade css `border` com o valor `3px solid rgb(255, 0, 0)` para as alternativas incorretas.
+  * Utilize a propriedade css `border` com o valor `3px solid rgb(6, 240, 15)` para a alternativa correta.
+  * Utilize a propriedade css `border` com o valor `3px solid rgb(255, 0, 0)` para as alternativas incorretas.
 
 8. Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder
 
-    * Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada
-    * Respostas incorretas não somam pontos ao placar
-    * Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até zero
-    * Após o tempo se esgotar, todos os botões das alternativas devem ser desabilitados
+  * Caso a pergunta não seja respondida a tempo, a resposta é considerada como errada
+  * Respostas incorretas não somam pontos ao placar
+  * Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até zero
+  * Após o tempo se esgotar, todos os botões das alternativas devem ser desabilitados
 
   Dica: Lembre-se do setTimeout e do setInterval
 
@@ -420,22 +420,22 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
   Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
-    * Você deve salvar a pontuação **atual** no `localStorage`
-    * Leia a seção "Implementações técnicas" para mais detalhes
-    * Respostas erradas não devem somar ao placar
-    * A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`;
+  * Você deve salvar a pontuação **atual** no `localStorage`
+  * Leia a seção "Implementações técnicas" para mais detalhes
+  * Respostas erradas não devem somar ao placar
+  * A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`
 
 10. Crie um botão de "Próxima" que apareça após a resposta ser dada
 
-    * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
-    * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
+  * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
+  * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
 11. Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total
 
-    * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
-    * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Feedback_
-    * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
-    * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
+  * A cada nova pergunta o temporizador deve ser reiniciado para 30 segundos
+  * Após a quinta pergunta, o botão "Próxima" deve redirecionar a pessoa para a tela de _Feedback_
+  * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
+  * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
 
 #### Tela de feedback
 
@@ -447,9 +447,9 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 13. Crie a mensagem de _feedback_ para ser exibida a pessoa usuária
 
-* A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
-* A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
-* O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
+  * A mensagem deve ser "Podia ser melhor..." caso a pessoa acerte menos de 3 perguntas
+  * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
+  * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
 14. Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária
 
