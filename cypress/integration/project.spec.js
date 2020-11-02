@@ -38,9 +38,76 @@ const FEEDBACK_TOTAL_SCORE_SELECTOR = '[data-testid="feedback-total-score"]';
 const FEEDBACK_TOTAL_QUESTION_SELECTOR = '[data-testid="feedback-total-question"]';
 const BUTTON_PLAY_AGAIN_SELECTOR = '[data-testid="btn-play-again"]';
 
+
+// login
+
+describe('1 - [TELA DE LOGIN] Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+  });
+
+  it('escreve o nome da pessoa jogadora', () => {
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
+  });
+
+  it('escreve o email da pessoa jogadora', () => {
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
+  });
+
+  it('botão Jogar desabilitado quando pessoa jogadora não preencher nenhum campo', () => {
+    cy.get(BUTTON_PLAY_SELECTOR).should('be.disabled');
+  });
+
+  it('botão Jogar desabilitado quando pessoa jogadora escrever apenas o nome', () => {
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
+    cy.get(BUTTON_PLAY_SELECTOR).should('be.disabled');
+  });
+
+  it('botão Jogar desabilitado quando pessoa jogadora escrever apenas o email', () => {
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
+    cy.get(BUTTON_PLAY_SELECTOR).should('be.disabled');
+  });
+
+  it('botão Jogar habilitado quando pessoa jogadora preencher os campos de nome e email', () => {
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
+    cy.get(BUTTON_PLAY_SELECTOR).should('not.be.disabled');
+  });
+});
+
+describe('2 - [TELA DE LOGIN] Crie o botão de iniciar o jogo', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+  });
+
+  it('inicia jogo salvando um token de jogador', () => {
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
+    cy.get(BUTTON_PLAY_SELECTOR).click().should(() => {
+      expect(localStorage.getItem(TOKEN_KEY)).not.to.be.null;
+    });
+  });
+});
+
+describe('3 - [TELA DE LOGIN] Crie um botão na tela inicial que leve para a tela de configurações', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+  });
+
+  it('o botão deve existir na página', () => {
+    cy.get(BUTTON_SETTINGS_SELECTOR).should('exist');
+  });
+
+  it('a tela de configurações deve possuir um título', () => {
+    cy.get(BUTTON_SETTINGS_SELECTOR).click();
+    cy.get(SETTINGS_TITLE_SELECTOR).should('exist');
+  });
+});
+
 // game
 
-describe('1 - [TELA DE JOGO] Crie um _header_ que deve conter as informações da pessoa jogadora', () => {
+describe('4 - [TELA DE JOGO] Crie um _header_ que deve conter as informações da pessoa jogadora', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -63,7 +130,7 @@ describe('1 - [TELA DE JOGO] Crie um _header_ que deve conter as informações d
   });
 });
 
-describe('2 - [TELA DE JOGO] Crie a página de jogo que deve conter as informações relacionadas à pergunta', () => {
+describe('5 - [TELA DE JOGO] Crie a página de jogo que deve conter as informações relacionadas à pergunta', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -86,7 +153,7 @@ describe('2 - [TELA DE JOGO] Crie a página de jogo que deve conter as informaç
   });
 });
 
-describe('3 - [TELA DE JOGO] Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta', () => {
+describe('6 - [TELA DE JOGO] Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -100,7 +167,7 @@ describe('3 - [TELA DE JOGO] Desenvolva o jogo onde só deve ser possível escol
   });
 });
 
-describe('4 - [TELA DE JOGO] Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas', () => {
+describe('7 - [TELA DE JOGO] Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -130,7 +197,7 @@ describe('4 - [TELA DE JOGO] Desenvolva o estilo que, ao clicar em uma resposta,
   });
 });
 
-describe('5 - [TELA DE JOGO] Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder', () => {
+describe('8 - [TELA DE JOGO] Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -150,7 +217,7 @@ describe('5 - [TELA DE JOGO] Desenvolva um timer onde a pessoa que joga tem 30 s
   });
 });
 
-describe('6 - [TELA DE JOGO] Crie o placar com as seguintes características:', () => {
+describe('9 - [TELA DE JOGO] Crie o placar com as seguintes características:', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -177,7 +244,7 @@ describe('6 - [TELA DE JOGO] Crie o placar com as seguintes características:', 
   });
 });
 
-describe('7 - [TELA DE JOGO] Crie um botão de "Próxima" que apareça após a resposta ser dada', () => {
+describe('10 - [TELA DE JOGO] Crie um botão de "Próxima" que apareça após a resposta ser dada', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -202,7 +269,7 @@ describe('7 - [TELA DE JOGO] Crie um botão de "Próxima" que apareça após a r
   });
 });
 
-describe('8 - [TELA DE JOGO] Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total', () => {
+describe('11 - [TELA DE JOGO] Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -259,75 +326,221 @@ describe('8 - [TELA DE JOGO] Desenvolva o jogo de forma que a pessoa que joga de
   });
 });
 
-// home
+// feedback
 
-describe('9 - [TELA DE LOGIN] Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/');
-  });
-
-  it('escreve o nome da pessoa jogadora', () => {
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
-  });
-
-  it('escreve o email da pessoa jogadora', () => {
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
-  });
-
-  it('botão Jogar desabilitado quando pessoa jogadora não preencher nenhum campo', () => {
-    cy.get(BUTTON_PLAY_SELECTOR).should('be.disabled');
-  });
-
-  it('botão Jogar desabilitado quando pessoa jogadora escrever apenas o nome', () => {
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
-    cy.get(BUTTON_PLAY_SELECTOR).should('be.disabled');
-  });
-
-  it('botão Jogar desabilitado quando pessoa jogadora escrever apenas o email', () => {
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
-    cy.get(BUTTON_PLAY_SELECTOR).should('be.disabled');
-  });
-
-  it('botão Jogar habilitado quando pessoa jogadora preencher os campos de nome e email', () => {
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
-    cy.get(BUTTON_PLAY_SELECTOR).should('not.be.disabled');
-  });
-});
-
-describe('10 - [TELA DE LOGIN] Crie um botão na tela inicial que leve para a tela de configurações', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/');
-  });
-
-  it('o botão deve existir na página', () => {
-    cy.get(BUTTON_SETTINGS_SELECTOR).should('exist');
-  });
-
-  it('a tela de configurações deve possuir um título', () => {
-    cy.get(BUTTON_SETTINGS_SELECTOR).click();
-    cy.get(SETTINGS_TITLE_SELECTOR).should('exist');
-  });
-});
-
-describe('11 - [TELA DE LOGIN] Crie o botão de iniciar o jogo', () => {
+describe('12 - [TELA DE FEEDBACK] Desenvolva o header de _feedback_ que deve conter as informações da pessoa jogadora', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
   });
 
-  it('inicia jogo salvando um token de jogador', () => {
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type('Nome da pessoa');
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type('email@pessoa.com');
-    cy.get(BUTTON_PLAY_SELECTOR).click().should(() => {
-      expect(localStorage.getItem(TOKEN_KEY)).not.to.be.null;
+  it('a imagem do Gravatar está presente no header', () => {
+    cy.get(HEADER_IMAGE_SELECTOR).should('exist');
+  });
+
+  it('o nome da pessoa está presente no header', () => {
+    cy.get(HEADER_NAME_SELECTOR).contains(name);
+  });
+
+  it('o placar com o valor atual está presente no header', () => {
+    cy.get(HEADER_SCORE_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.score);
     });
+  });
+});
+
+describe('13 - [TELA DE FEEDBACK] Crie a mensagem de _feedback_ para ser exibida a pessoa usuária', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('acertou menos de 3 perguntas', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TEXT_SELECTOR).contains('Podia ser melhor...');
+  });
+
+  it('acertou 3 perguntas', () => {
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TEXT_SELECTOR).contains('Mandou bem!');
+  });
+
+  it('acertou mais de 3 perguntas', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TEXT_SELECTOR).contains('Mandou bem!');
+  });
+});
+
+describe('14 - [TELA DE FEEDBACK] Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+  });
+
+  it('não acertou nenhuma pergunta', () => {
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.score);
+    });
+    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
+    });
+  });
+
+  it('acertou 2 perguntas', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.score);
+    });
+    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
+    });
+  });
+
+  it('acertou 4 perguntas', () => {
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.score);
+    });
+    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
+      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
+      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
+    });
+  });
+});
+
+describe('15 - [TELA DE FEEDBACK] Crie a opção para a pessoa jogadora poder jogar novamente', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+  });
+
+  it('a pessoa deve ser redirecionada para tela inicial', () => {
+    cy.get(BUTTON_PLAY_AGAIN_SELECTOR).click();
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).should('exist');
+  });
+});
+
+describe('16 - [TELA DE FEEDBACK] Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+    cy.clearLocalStorage();
+    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
+    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
+    cy.get(BUTTON_PLAY_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
+    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
+  });
+
+  it('a pessoa deve ser redirecionada para tela inicial', () => {
+    cy.get(BUTTON_RANKING_SELECTOR).click();
+    cy.get(RANKING_TITLE_SELECTOR).should('exist');
   });
 });
 
 // ranking
 
-describe('12 - [TELA DE RANKING] Crie um botão para ir ao início', () => {
+describe('17 - [TELA DE RANKING] Crie um botão para ir ao início', () => {
   it('volta para a tela inicial', () => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -350,7 +563,7 @@ describe('12 - [TELA DE RANKING] Crie um botão para ir ao início', () => {
   });
 });
 
-describe('13 - [TELA DE RANKING] Crie a tela de _ranking_', () => {
+describe('18 - [TELA DE RANKING] Crie a tela de _ranking_', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
     cy.clearLocalStorage();
@@ -446,217 +659,5 @@ describe('13 - [TELA DE RANKING] Crie a tela de _ranking_', () => {
     cy.get(RANKING_PLAYERS_NAME_SELECTOR).each(($el, $index) => {
       expect($el.text()).to.be.eq(ranking[$index]);
     });
-  });
-});
-
-// feedback
-
-describe('14 - [TELA DE FEEDBACK] Desenvolva o header de _feedback_ que deve conter as informações da pessoa jogadora', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/');
-    cy.clearLocalStorage();
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
-    cy.get(BUTTON_PLAY_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-  });
-
-  it('a imagem do Gravatar está presente no header', () => {
-    cy.get(HEADER_IMAGE_SELECTOR).should('exist');
-  });
-
-  it('o nome da pessoa está presente no header', () => {
-    cy.get(HEADER_NAME_SELECTOR).contains(name);
-  });
-
-  it('o placar com o valor atual está presente no header', () => {
-    cy.get(HEADER_SCORE_SELECTOR).should(($el) => {
-      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
-      expect(parseInt($el.text())).to.be.eq(state.player.score);
-    });
-  });
-});
-
-describe('15 - [TELA DE FEEDBACK] Crie a mensagem de _feedback_ para ser exibida a pessoa usuária', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/');
-    cy.clearLocalStorage();
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
-    cy.get(BUTTON_PLAY_SELECTOR).click();
-  });
-
-  it('acertou menos de 3 perguntas', () => {
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(FEEDBACK_TEXT_SELECTOR).contains('Podia ser melhor...');
-  });
-
-  it('acertou 3 perguntas', () => {
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(FEEDBACK_TEXT_SELECTOR).contains('Mandou bem!');
-  });
-
-  it('acertou mais de 3 perguntas', () => {
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(FEEDBACK_TEXT_SELECTOR).contains('Mandou bem!');
-  });
-});
-
-describe('16 - [TELA DE FEEDBACK] Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/');
-    cy.clearLocalStorage();
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
-    cy.get(BUTTON_PLAY_SELECTOR).click();
-  });
-
-  it('não acertou nenhuma pergunta', () => {
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
-      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
-      expect(parseInt($el.text())).to.be.eq(state.player.score);
-    });
-    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
-      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
-      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
-    });
-  });
-
-  it('acertou 2 perguntas', () => {
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
-      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
-      expect(parseInt($el.text())).to.be.eq(state.player.score);
-    });
-    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
-      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
-      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
-    });
-  });
-
-  it('acertou 4 perguntas', () => {
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(FEEDBACK_TOTAL_SCORE_SELECTOR).should(($el) => {
-      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
-      expect(parseInt($el.text())).to.be.eq(state.player.score);
-    });
-    cy.get(FEEDBACK_TOTAL_QUESTION_SELECTOR).should(($el) => {
-      const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY));
-      expect(parseInt($el.text())).to.be.eq(state.player.assertions);
-    });
-  });
-});
-
-describe('17 - [TELA DE FEEDBACK] Crie a opção para a pessoa jogadora poder jogar novamente', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/');
-    cy.clearLocalStorage();
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
-    cy.get(BUTTON_PLAY_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-  });
-
-  it('a pessoa deve ser redirecionada para tela inicial', () => {
-    cy.get(BUTTON_PLAY_AGAIN_SELECTOR).click();
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).should('exist');
-  });
-});
-
-describe('18 - [TELA DE FEEDBACK] Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/');
-    cy.clearLocalStorage();
-    cy.get(INPUT_PLAYER_NAME_SELECTOR).type(name);
-    cy.get(INPUT_PLAYER_EMAIL_SELECTOR).type(email);
-    cy.get(BUTTON_PLAY_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(BUTTON_NEXT_QUESTION_SELECTOR).click();
-  });
-
-  it('a pessoa deve ser redirecionada para tela inicial', () => {
-    cy.get(BUTTON_RANKING_SELECTOR).click();
-    cy.get(RANKING_TITLE_SELECTOR).should('exist');
   });
 });
