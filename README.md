@@ -29,6 +29,7 @@ Nesse projeto, você será capaz de:
 ## SUMÁRIO
 
 - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Protótipo do projeto](#prototipo-do-projeto)
 - [Data de entrega](#data-de-entrega)
 - [Como desenvolver](#como-desenvolver)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
@@ -38,7 +39,7 @@ Nesse projeto, você será capaz de:
   - [API de Trivia](#api-de-trivia)
   - [Gravatar](#gravatar)
   - [Grupos de prioridade](#grupos-de-prioridade)
-  - [Observações técnicas](#observacoes-tecnicas)
+  - [Observações técnicas](#observações-tecnicas)
 - [Lista de requisitos](#lista-de-requisitos)
   - [Tela de início](#tela-de-inicio)
     - [](#)
@@ -60,6 +61,9 @@ Nesse projeto, você será capaz de:
     - [](#)
     - [](#)
   - [Extra não avaliativo: tela de configurações](#)
+    - [](#)
+    - [](#)
+    - [](#)
 - [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
   - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
@@ -78,9 +82,9 @@ Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Tri
   - Visualizar a página de ranking, se quiser, ao final de cada jogo.
   - Configurar algumas opções para o jogo em uma tela de configuração acessível a partir do cabeçalho do app.
 
-Você pode acessar um protótipo completo da interface desejada para o projeto no link abaixo:
+### Protótipo do projeto
 
-[**Protótipo do projeto**](https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1)
+Você pode acessar um protótipo completo da interface desejada para o projeto [**neste link**](https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1).
 
 **Sinta-se livre para alterar a UI.** Só respeite as restrições de cada requisito - elas serão usados na correção.
 
