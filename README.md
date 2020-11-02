@@ -29,6 +29,42 @@ Nesse projeto, você será capaz de:
 ## SUMÁRIO
 
 - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+- [Data de entrega](#data-de-entrega)
+- [Como desenvolver](#como-desenvolver)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+- [Requisitos do projeto](#requisitos-do-projeto)
+  - [Linter](#linter)
+  - [Execução de testes de requisito](#execução-de-testes-de-requisito)
+  - [API de Trivia](#api-de-trivia)
+  - [Gravatar](#gravatar)
+  - [Grupos de prioridade](#grupos-de-prioridade)
+  - [Observações técnicas](#observacoes-tecnicas)
+- [Lista de requisitos](#lista-de-requisitos)
+  - [Tela de início](#tela-de-inicio)
+    - [](#)
+    - [](#)
+    - [](#)
+    - [](#)
+    - [](#)
+  - [Tela de jogo](#tela-de-jogo)
+    - [](#)
+    - [](#)
+    - [](#)
+  - [Tela de feedback](#tela-de-feedback)
+    - [](#)
+    - [](#)
+    - [](#)
+    - [](#)
+    - [](#)
+  - [Tela de ranking](#tela-de-ranking)
+    - [](#)
+    - [](#)
+  - [Extra não avaliativo: tela de configurações](#)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+  - [Revisando um Pull Request](#revisando-um-pull-request)
+- [Avisos finais](#avisos-finais)
 
 ---
 
@@ -315,7 +351,7 @@ player: {
 
 Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking. Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projetos nas ferramentas do React como o Router, Link, Redux e testes para ajudá-los a completar os requisitos.
 
-#### Tela de início:
+#### Tela de início
 
 1. A pessoa que joga deve preencher as informações para iniciar um jogo
 
@@ -345,7 +381,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
     * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
 
 
-#### Tela do jogo:
+#### Tela de jogo
 
 1. O _header_ deve conter as informações da pessoa jogadora
 
@@ -398,7 +434,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
     * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
     * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
 
-#### Tela de feedback:
+#### Tela de feedback
 
 1. O _header_ de _feedback_ deve conter as informações da pessoa jogadora
 
@@ -427,7 +463,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
   * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
-#### Tela de ranking:
+#### Tela de ranking
 
 1. Deve existir um botão para ir ao início
 
@@ -442,7 +478,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O ranking deve ser armazenado no navegador através do `localStorage`.
   * Leia a seção "Implementações técnicas" para mais detalhes
 
-#### (Não avaliativo) Tela de configurações:
+#### EXTRA NÃO AVALIATIVO: Tela de configurações
 
 1. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;
 
