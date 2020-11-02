@@ -21,7 +21,7 @@
     "no-magic-numbers": [
       "error",
       {
-        "ignore": [1],
+        "ignore": [0, 1, 2, 100],
         "ignoreArrayIndexes": true,
         "enforceConst": true,
         "detectObjects": false
@@ -36,6 +36,7 @@
       }
     ],
     "no-console": ["off"],
+    "no-underscore-dangle": ["off"],
     "no-param-reassign": ["off"],
     "consistent-return": ["off"],
     "no-undef": ["off"],
@@ -55,7 +56,7 @@
       "error",
       {"allowRequiredDefaults": false}
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/no-array-index-key": ["off"],
     "react/destructuring-assignment": ["error", "always"],
     "react/forbid-component-props": ["error"],
     "react/forbid-prop-types": ["error"],
