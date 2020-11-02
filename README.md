@@ -26,6 +26,12 @@ Nesse projeto, você será capaz de:
 
 ---
 
+## SUMÁRIO
+
+- [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+
+---
+
 ## O QUE DEVERÁ SER DESENVOLVIDO
 
 Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_. Para viver um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. A partir dessas demandas, teremos uma aplicação onde a pessoa usuária poderá:
