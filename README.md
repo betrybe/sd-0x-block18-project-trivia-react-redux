@@ -349,6 +349,8 @@ Esses testes não consideram o layout de maneira geral, mas sim os atributos e i
 
 Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
 
+**Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
+
 #### Tela de início:
 
 1. A pessoa que joga deve preencher as informações para iniciar um jogo
@@ -410,6 +412,8 @@ Os testes te darão uma mensagem de erro caso não estejam passando (seja qual f
     * Respostas incorretas não somam pontos ao placar
     * Um temporizador deve aparecer na tela da pessoa, começando de 30 segundos e indo de forma decrescente até zero
     * Após o tempo se esgotar, todos os botões das alternativas devem ser desabilitados
+
+  Dica: Lembre-se do setTimeout e do setInterval
 
 6. Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
