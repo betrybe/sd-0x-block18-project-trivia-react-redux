@@ -30,15 +30,15 @@ Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://
 
 ---
 
-# O que deverá ser desenvolvido
+### O que deverá ser desenvolvido
 
-Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_, em um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. A partir dessas demandas, teremos uma aplicação onde as pessoa usuária poderá:
+Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_. Para viver um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. A partir dessas demandas, teremos uma aplicação onde a pessoa usuária poderá:
 
-  - Logar no jogo e, se o email tiver cadastro no site [Gravatar](https://pt.gravatar.com/), a foto será associada ao perfil do usuário.
-  - Acessar a página referente ao jogo, onde deverá escolher uma das respostas disponíveis para cada uma das perguntas. A resposta deve ser marcada antes do contador chegar a zero, caso contrário, a resposta deverá ser considerada errada.
+  - Logar no jogo e, se o email tiver cadastro no site [Gravatar](https://pt.gravatar.com/), ter sua foto associada ao perfil de usuária.
+  - Acessar a página referente ao jogo, onde se deverá escolher uma das respostas disponíveis para cada uma das perguntas apresentadas. A resposta deve ser marcada antes do contador de tempo chegar a zero, caso contrário a resposta deverá ser considerada errada.
   - Ser redirecionada, após 5 perguntas respondidas, para a tela de score, onde o texto mostrado depende do número de acertos.
   - Visualizar a página de ranking, se quiser, ao final de cada jogo.
-  - Configurar algumas opções para o jogo em uma tela de configuração acessível a partir do header do app.
+  - Configurar algumas opções para o jogo em uma tela de configuração acessível a partir do cabeçalho do app.
 
 Você pode acessar um protótipo no link abaixo:
 
@@ -60,11 +60,11 @@ Através dessa aplicação, será possível realizar operações básicas de cri
 
 ### Data de Entrega
 
-  - Projeto individual.
+  - Projeto em grupo.
 
   - Serão cinco dias de projeto.
   
-  - O projeto tem até a seguinte data: `DD/MM/YYYY - 14:00h`. Para ser entregue a avaliação final.
+  - O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
@@ -84,9 +84,9 @@ Este repositório **já conta com uma `main-group` para cada grupo**, identifica
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-06-project-trivia-react-redux.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-trivia-react-redux.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-06-project-trivia-react-redux`
+    * `cd sd-0x-project-trivia-react-redux`
   * Vá para a branch do seu grupo, com `git checkout main-group-XX && git pull`, onde `XX` é o número do seu grupo. Exemplos: `main-group-1`, `main-group-22`.
 
 2. Instale as dependências e inicialize o projeto
@@ -530,7 +530,7 @@ player: {
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=Turma%205)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
