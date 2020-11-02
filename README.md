@@ -357,7 +357,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de início
 
-1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
+##### 1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
 
   * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
   * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
