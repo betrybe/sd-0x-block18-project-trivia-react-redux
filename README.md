@@ -359,21 +359,21 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
 
-    * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
-    * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
-    * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
-    * A pessoa que joga deve conseguir escrever seu nome no input de texto
-    * A pessoa que joga deve conseguir escrever seu email no input de email
-    * O botão "Jogar" deve ser desabilitado caso email e/ou nome não estejam preenchidos
+  * O campo de texto para o nome deve possuir o atributo `data-testid` com o valor `input-player-name`
+  * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
+  * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
+  * A pessoa que joga deve conseguir escrever seu nome no input de texto
+  * A pessoa que joga deve conseguir escrever seu email no input de email
+  * O botão "Jogar" deve ser desabilitado caso email e/ou nome não estejam preenchidos
 
 2. Crie o botão de iniciar o jogo
 
   O botão "Jogar" para fazer requisição para a API e redirecionar a pessoa para tela de jogo
 
-    * Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo
-    * Ao clicar no botão "Jogar", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
-    * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
-    * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
+  * Após clicar no botão "Jogar", a pessoa deve ser redirecionada para a tela do jogo
+  * Ao clicar no botão "Jogar", um requisição para a API do Trivia deve ser feita para obter o _token_ de jogador
+  * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
+  * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
 
 3. Crie um botão que leva a pessoa para tela de configuração
 
