@@ -1,7 +1,6 @@
 on:
   pull_request:
     types: [opened, synchronize]
-
 jobs:
   evaluator_job:
     runs-on: ubuntu-18.04
@@ -21,6 +20,7 @@ jobs:
         with:
           repository-test-name: 'betrybe/sd-0x-project-trivia-react-redux-tests'
           repository-test-branch: 'master'
+          npm-start: true
       - name: Store evaluation step
         uses: betrybe/store-evaluation-action@v2
         with:
