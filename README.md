@@ -464,7 +464,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 #### 7. DESENVOLVA O ESTILO QUE, AO CLICAR EM UMA RESPOSTA, A CORRETA DEVE FICAR VERDE E AS INCORRETAS, VERMELHAS
 
-  **PRIORIDADE 1** - Ao responder a pergunta, se a alternativa for correta, deve ficar verde, caso contrário, vermelha
+  **PRIORIDADE 2** - Ao responder a pergunta, se a alternativa for correta, deve ficar verde, caso contrário, vermelha
 
   **Observações técnicas**
 
