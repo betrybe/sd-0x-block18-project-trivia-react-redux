@@ -399,7 +399,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 #### 3. CRIE UM BOTÃO QUE LEVA A PESSOA PARA TELA DE CONFIGURAÇÃO
 
-  **PRIORIDADE 2** - A tela inicial deve conter um botão que leve para a configuração do jogo
+  **PRIORIDADE 1** - A tela inicial deve conter um botão que leve para a configuração do jogo
 
   **Observações técnicas**
 
