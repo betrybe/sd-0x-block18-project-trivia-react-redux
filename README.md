@@ -480,7 +480,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 #### 8. DESENVOLVA UM TIMER ONDE A PESSOA QUE JOGA TEM 30 SEGUNDOS PARA RESPONDER
 
-  **PRIORIDADE 1** - A página deve conter um timer que com o tempo máximo de 30 segundos para responder, caso ultrapasse o tempo, a pergunta é considerada errada
+  **PRIORIDADE 3** - A página deve conter um timer que com o tempo máximo de 30 segundos para responder, caso ultrapasse o tempo, a pergunta é considerada errada
 
   **Observações técnicas**
 
