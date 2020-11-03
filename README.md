@@ -639,7 +639,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 #### 18. CRIE UM BOTÃO PARA IR AO INÍCIO
 
-  **PRIORIDADE 2** - O botão deve redirecionar a pessoa para a tela de inicial (login)
+  **PRIORIDADE 3** - O botão deve redirecionar a pessoa para a tela de inicial (login)
 
   **Observações técnicas**
 
