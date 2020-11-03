@@ -594,7 +594,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 #### 15. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER JOGAR NOVAMENTE
 
-  **PRIORIDADE 2** - A pessoa terá a opção "Jogar novamente", que ao ser clicada, levará para a tela de inicial
+  **PRIORIDADE 3** - A pessoa terá a opção "Jogar novamente", que ao ser clicada, levará para a tela de inicial
 
   * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início (login)
   * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
