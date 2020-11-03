@@ -358,7 +358,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de início/login
 
-##### 1. CRIE A TELA DE LOGIN, ONDE A PESSOA QUE JOGA DEVE PREENCHER AS INFORMAÇÕES PARA INICIAR UM JOGO
+#### 1. CRIE A TELA DE LOGIN, ONDE A PESSOA QUE JOGA DEVE PREENCHER AS INFORMAÇÕES PARA INICIAR UM JOGO
 
   **PRIORIDADE 0** - Criar a tela de login contendo as informações de nome e email, onde a pessoa que joga deve conseguir escrever seu nome e email nos inputs e o botão de jogar deve estar desabilitado caso não tenha alguma dessas informações.
 
@@ -380,7 +380,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Botão Jogar desabilitado quando pessoa jogadora escrever apenas o email
   * Botão Jogar habilitado quando pessoa jogadora preencher os campos de nome e email
 
-##### 2. CRIE O BOTÃO DE INICIAR O JOGO
+#### 2. CRIE O BOTÃO DE INICIAR O JOGO
 
   **PRIORIDADE 1** - O botão "Jogar" deve fazer requisição para a API para obter o token e redirecionar a pessoa para tela de jogo
 
@@ -395,7 +395,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
   * Inicia jogo salvando um token de jogador
 
-##### 3. CRIE UM BOTÃO QUE LEVA A PESSOA PARA TELA DE CONFIGURAÇÃO
+#### 3. CRIE UM BOTÃO QUE LEVA A PESSOA PARA TELA DE CONFIGURAÇÃO
 
   **PRIORIDADE 2** - A tela inicial deve conter um botão que leve para a configuração do jogo
 
@@ -411,7 +411,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de jogo
 
-##### 4. CRIE UM _HEADER_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
+#### 4. CRIE UM _HEADER_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
 
   **PRIORIDADE 1** - O header deve conter as informações sobre a pessoa jogadora, como a imagem do Gravatar, o nome e o placar
 
@@ -427,7 +427,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O nome da pessoa está presente no header
   * O placar zerado está presente no header
 
-##### 5. CRIE A PÁGINA DE JOGO QUE DEVE CONTER AS INFORMAÇÕES RELACIONADAS À PERGUNTA
+#### 5. CRIE A PÁGINA DE JOGO QUE DEVE CONTER AS INFORMAÇÕES RELACIONADAS À PERGUNTA
 
   **PRIORIDADE 0** - Deve ser feita a requisição para a API para popular o jogo com as perguntas, categoria e alternativas
 
@@ -448,7 +448,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O texto da pergunta está presente
   * As alternativas devem estar presentes
 
-##### 6. DESENVOLVA O JOGO ONDE SÓ DEVE SER POSSÍVEL ESCOLHER UMA RESPOSTA CORRETA POR PERGUNTA
+#### 6. DESENVOLVA O JOGO ONDE SÓ DEVE SER POSSÍVEL ESCOLHER UMA RESPOSTA CORRETA POR PERGUNTA
 
   **PRIORIDADE 1** - A pergunta deve ter apenas uma alternativa correta
 
@@ -460,7 +460,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
   * A quantidade de respostas corretas deve ser 1
 
-##### 7. DESENVOLVA O ESTILO QUE, AO CLICAR EM UMA RESPOSTA, A CORRETA DEVE FICAR VERDE E AS INCORRETAS, VERMELHAS
+#### 7. DESENVOLVA O ESTILO QUE, AO CLICAR EM UMA RESPOSTA, A CORRETA DEVE FICAR VERDE E AS INCORRETAS, VERMELHAS
 
   **PRIORIDADE 1** - Ao responder a pergunta, se a alternativa for correta, deve ficar verde, caso contrário, vermelha
 
@@ -476,7 +476,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Verifica cor da alternativa correta quando erra a questão
   * Verifica a cor das alternativas incorretas quando erra a questão
 
-##### 8. DESENVOLVA UM TIMER ONDE A PESSOA QUE JOGA TEM 30 SEGUNDOS PARA RESPONDER
+#### 8. DESENVOLVA UM TIMER ONDE A PESSOA QUE JOGA TEM 30 SEGUNDOS PARA RESPONDER
 
   **PRIORIDADE 1** - A página deve conter um timer que com o tempo máximo de 30 segundos para responder, caso ultrapasse o tempo, a pergunta é considerada errada
 
@@ -510,7 +510,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
    * Soma pontos ao acertar uma questão
    * Não soma pontos ao errar uma questão
 
-##### 10. CRIE UM BOTÃO DE "PRÓXIMA" QUE APAREÇA APÓS A RESPOSTA SER DADA
+#### 10. CRIE UM BOTÃO DE "PRÓXIMA" QUE APAREÇA APÓS A RESPOSTA SER DADA
 
   **PRIORIDADE 2** - Deve aparecer um botão de "Próxima" (pergunta) após a resposta ser dada
 
@@ -525,7 +525,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Botão de próxima pergunta é visível quando a pergunta é respondida corretamente
   * Botão de próxima pergunta é visível quando a pergunta é respondida incorretamente
 
-##### 11. DESENVOLVA O JOGO DE FORMA QUE A PESSOA QUE JOGA DEVE RESPONDER 5 PERGUNTAS NO TOTAL
+#### 11. DESENVOLVA O JOGO DE FORMA QUE A PESSOA QUE JOGA DEVE RESPONDER 5 PERGUNTAS NO TOTAL
 
   **PRIORIDADE 2** - O jogo deve ser composto por 5 perguntas, onde, a cada nova pergunta, o timer é reiniciado e após respondê-las, a pessoa que joga deve ser redirecionada para a tela de feedback
 
@@ -544,7 +544,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de feedback
 
-##### 12. DESENVOLVA O HEADER DE _FEEDBACK_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
+#### 12. DESENVOLVA O HEADER DE _FEEDBACK_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
 
   **PRIORIDADE 0** - A tela de feedback deve conter as informações da pessoa que joga, incluindo o placar com o valor referente ao desempenho no jogo
 
@@ -560,7 +560,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * O nome da pessoa está presente no header
   * O placar com o valor atual está presente no header
 
-##### 13. CRIE A MENSAGEM DE _FEEDBACK_ PARA SER EXIBIDA A PESSOA USUÁRIA
+#### 13. CRIE A MENSAGEM DE _FEEDBACK_ PARA SER EXIBIDA A PESSOA USUÁRIA
 
   **PRIORIDADE 1** - A tela de feedback deve exibir uma mensagem relacionada ao desempenho da pessoa que jogou
 
@@ -576,7 +576,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Acertou 3 perguntas
   * Acertou mais de 3 perguntas
 
-##### 14. EXIBA AS INFORMAÇÕES RELACIONADAS AOS RESULTADOS OBTIDOS PARA A PESSOA USUÁRIA
+#### 14. EXIBA AS INFORMAÇÕES RELACIONADAS AOS RESULTADOS OBTIDOS PARA A PESSOA USUÁRIA
 
   **PRIORIDADE 1** - A tela de feedback deve exibir informações sobre o desempenho da pessoa, como o placar final e o número de perguntas que acertou
 
@@ -588,7 +588,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Acertou 2 perguntas
   * Acertou 4 perguntas
 
-##### 15. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER JOGAR NOVAMENTE
+#### 15. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER JOGAR NOVAMENTE
 
   **PRIORIDADE 2** - A pessoa terá a opção "Jogar novamente", que ao ser clicada, levará para a tela de inicial
 
@@ -599,7 +599,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
   * A pessoa deve ser redirecionada para tela inicial
 
-##### 16. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER VISUALIZAR A TELA DE _RANKING_
+#### 16. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER VISUALIZAR A TELA DE _RANKING_
 
   **PRIORIDADE 2** - Deve existir um botão que redirecione a pessoa para a tela de ranking
 
@@ -615,7 +615,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 ### Tela de ranking
 
-##### 17. CRIE A TELA DE _RANKING_
+#### 17. CRIE A TELA DE _RANKING_
 
   **PRIORIDADE 0** - A tela de ranking deve possuir uma lista com a imagem, nome e pontuação das pessoas que jogaram e deve ficar armazenado no localStorage
 
@@ -633,7 +633,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
   * Devem existir duas pessoas no _ranking_
   * O _ranking_ deve ser ordenado pela pontuação
 
-##### 18. CRIE UM BOTÃO PARA IR AO INÍCIO
+#### 18. CRIE UM BOTÃO PARA IR AO INÍCIO
 
   **PRIORIDADE 2** - O botão deve redirecionar a pessoa para a tela de inicial (login)
 
