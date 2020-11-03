@@ -431,7 +431,7 @@ Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver
 
 #### 5. CRIE A PÁGINA DE JOGO QUE DEVE CONTER AS INFORMAÇÕES RELACIONADAS À PERGUNTA
 
-  **PRIORIDADE 0** - Deve ser feita a requisição para a API para popular o jogo com as perguntas, categoria e alternativas
+  **PRIORIDADE 1** - Deve ser feita a requisição para a API para popular o jogo com as perguntas, categoria e alternativas
 
   **Observações técnicas**
 
