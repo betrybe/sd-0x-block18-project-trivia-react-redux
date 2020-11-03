@@ -454,7 +454,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 #### 6. DESENVOLVA O JOGO ONDE SÓ DEVE SER POSSÍVEL ESCOLHER UMA RESPOSTA CORRETA POR PERGUNTA
 
-  **PRIORIDADE 1** - A pergunta deve ter apenas uma alternativa correta
+  **PRIORIDADE 2** - A pergunta deve ter apenas uma alternativa correta
 
   **Observações técnicas**
 
