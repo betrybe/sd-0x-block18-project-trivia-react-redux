@@ -516,7 +516,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 #### 10. CRIE UM BOTÃO DE "PRÓXIMA" QUE APAREÇA APÓS A RESPOSTA SER DADA
 
-  **PRIORIDADE 2** - Deve aparecer um botão de "Próxima" (pergunta) após a resposta ser dada
+  **PRIORIDADE 3** - Deve aparecer um botão de "Próxima" (pergunta) após a resposta ser dada
 
   **Observações técnicas**
 
