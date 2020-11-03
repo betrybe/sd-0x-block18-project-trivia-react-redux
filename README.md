@@ -500,7 +500,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 ##### 9. CRIE O PLACAR COM AS SEGUINTES CARACTERÍSTICAS:
 
-  **PRIORIDADE 1** - Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
+  **PRIORIDADE 3** - Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
   **Observações técnicas**
 
