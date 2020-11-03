@@ -605,7 +605,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 #### 16. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER VISUALIZAR A TELA DE _RANKING_
 
-  **PRIORIDADE 2** - Deve existir um botão que redirecione a pessoa para a tela de ranking
+  **PRIORIDADE 3** - Deve existir um botão que redirecione a pessoa para a tela de ranking
 
   **Observações técnicas**
 
