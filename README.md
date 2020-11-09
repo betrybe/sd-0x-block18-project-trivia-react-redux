@@ -305,9 +305,12 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 
 ### Grupos de prioridade
 
-Os requisitos são organizados por telas e grupos de prioridade. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
+Os requisitos são organizados por **grupos de prioridade por tela**. O objetivo é que o grupo possa se organizar melhor para que uma pessoa não fique totalmente dependente de outra para começar uma tarefa de outra tela. **Demandas de um grupo de prioridade podem ser realizadas em paralelo, e são pré-requisito para as demandas do grupo de prioridade seguinte.** Por exemplo:
 
-  - A tela de login possui como prioridade 0 a criação do input de nome e email, mas só é possível fazer a ação de habilitar/desabilitar botão e salvar o token do usuário (prioridade 1), quando os inputs estiverem prontos
+  - A tela de Login possui como prioridade 0 a criação do input de nome e email, mas só é possível fazer a ação de habilitar/desabilitar botão e salvar o token do usuário (prioridade 1), quando os inputs estiverem prontos.
+  - O primeiro requisito da tela de Jogo "Crie um header que deve conter as informações da pessoa jogadora" tem prioridade 1, ou seja, ele pode ser criado em paralelo mas depende das informações vindas da tela de Jogo para que o requisito seja aprovado.
+  - Prioridades 2 são aquelas que dependem de outros requisitos, por exemplo, "A pergunta deve ter apenas uma alternativa correta", ou seja, depende que o requisito 1 esteja pronto para ser realizada.
+  - Prioridades 3 são os ajustes finais, de prioridade baixa, que podem ou não depender de outros requisitos mas que não possuem dependentes. 
 
 Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, na maioria das vezes, do avanço de outra para poder acontecer. **Ainda que siga a ordem de prioridade, no entanto, conflitos podem ocorrer a depender de como for feita a implementação do projeto, então é importante que o grupo faça esse alinhamento constantemente!**
 
