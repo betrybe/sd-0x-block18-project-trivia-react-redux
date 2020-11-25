@@ -434,7 +434,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O campo de texto para o email deve possuir o atributo `data-testid` com o valor `input-gravatar-email`
   * O botão "Jogar" que leva a pessoa ao jogo deve possuir o atributo `data-testid` com o valor `btn-play`
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Escreve o nome da pessoa jogadora
   * Escreve o email da pessoa jogadora
@@ -454,7 +454,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O _token_ deve ser armazenado na aplicação e enviado em todas as requisições seguintes.
   * Salve no `LocalStorage` o _token_ recebido utilizando a chave `token`
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Inicia jogo salvando um token de jogador
 
@@ -467,7 +467,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O botão que leva a pessoa a tela de configurações deve possuir o atributo `data-testid` com o valor `btn-settings`
   * A tela de configurações deve possuir um título com o atributo `data-testid` contendo o valor `settings-title`
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * O botão deve existir na página
   * A tela de configurações deve possuir um título
@@ -484,7 +484,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
   * O placar zerado em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * A imagem do Gravatar está presente no header
   * O nome da pessoa está presente no header
@@ -505,7 +505,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
     * As alternativas devem ser exibidas em ordem aleatória
     * Dica: utilize botões (`<button/>`) para as alternativas
   
-  **O que será avaliado**
+  **O que será verificado**
 
   * A categoria da pergunta está presente
   * O texto da pergunta está presente
@@ -519,7 +519,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   * Apenas uma alternativa deve ser a correta
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * A quantidade de respostas corretas deve ser 1
 
@@ -532,7 +532,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Utilize a propriedade css `border` com o valor `3px solid rgb(6, 240, 15)` para a alternativa correta.
   * Utilize a propriedade css `border` com o valor `3px solid rgb(255, 0, 0)` para as alternativas incorretas.
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Verifica cor da alternativa correta quando acerta a questão
   * Verifica a cor das alternativas incorretas quando acerta a questão
@@ -552,7 +552,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   Dica: Lembre-se do setTimeout e do setInterval
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Aguarda 5 segundos e responde a alternativa correta
   * Aguarda mais de 30 segundos para responder
@@ -568,7 +568,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Respostas erradas não devem somar ao placar
   * A fórmula para cálculo dos pontos por pergunta é: `10 + (timer * dificuldade)`, onde timer é o tempo restante no contador de tempo e dificuldade é `hard: 3, medium: 2, easy: 1`, dependendo da pergunta. Exemplo: Se no momento da resposta correta o timer estiver contando 17 segundos, e a dificuldade da pergunta é 2 (média), a pontuação deve ser: `10 + (17 * 2) = 44`
 
-   **O que será avaliado**
+   **O que será verificado**
 
    * Soma pontos ao acertar uma questão
    * Não soma pontos ao errar uma questão
@@ -582,7 +582,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O botão "Próxima" deve possuir o atributo `data-testid` com o valor `btn-next`
   * Ao clicar nesse botão, a próxima pergunta deve aparecer na tela
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * O botão de próxima pergunta não deve ser visível o início do jogo
   * Botão de próxima pergunta é visível quando a pergunta é respondida corretamente
@@ -599,7 +599,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Para perguntas com type:"boolean", mostrar somente 2 campos (um para cada resposta possível)
   * Para perguntas com type:"multiple", mostrar a quantidade necessária de campos (um para cada resposta possível)
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Acerta todas as perguntas
   * Erra todas as perguntas
@@ -617,7 +617,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O nome da pessoa em um elemento que deve possuir o atributo `data-testid` com o valor `header-player-name`
   * O placar com o valor **atual** em um elemento que deve possuir o atributo `data-testid` com o valor `header-score`
 
-  **O que será avaliado**
+  **O que será verificado:**
 
   * A imagem do Gravatar está presente no header
   * O nome da pessoa está presente no header
@@ -633,7 +633,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * A mensagem deve ser "Mandou bem!" caso a pessoa acerte 3 perguntas ou mais
   * O elemento da mensagem de _feedback_ deve possuir o atributo `data-testid` com o valor `feedback-text`
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Acertou menos de 3 perguntas
   * Acertou 3 perguntas
@@ -646,7 +646,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O placar final deve ser mostrado em um elemento com o atributo `data-testid` com o valor `feedback-total-score`
   * O número de perguntas que a pessoa acertou deve ser exibido em um elemento com o atributo `data-testid` com o valor `feedback-total-question`
 
-  **O que será avaliado**
+  **O que será verificado**
   * Não acertou nenhuma pergunta
   * Acertou 2 perguntas
   * Acertou 4 perguntas
@@ -658,7 +658,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Ao clicar no botão "Jogar novamente", a pessoa deve ser redirecionada para a tela de início (login)
   * O botão para jogar novamente deve possuir o atributo `data-testid` com o valor `btn-play-again`
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * A pessoa deve ser redirecionada para tela inicial
 
@@ -672,7 +672,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O botão para ir para a tela de _ranking_ deve possuir o atributo `data-testid` com o valor `btn-ranking`
   * A tela de _ranking_ deve possuir um título com o atributo `data-testid` contendo o valor `ranking-title`
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * A pessoa deve ser redirecionada para tela de ranking
 
@@ -690,7 +690,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O ranking deve ser armazenado no navegador através do `localStorage`.
   * Leia a seção "Implementações técnicas" para mais detalhes
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Deve existir uma pessoa no _ranking_
   * Devem existir duas pessoas no _ranking_
@@ -705,7 +705,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Esse botão deve possuir o atributo `data-testid` com o valor `btn-go-home`
   * Esse botão deve enviar a pessoa para o início (tela de preenchimento dos dados)
 
-  **O que será avaliado**
+  **O que será verificado**
 
   * Volta para a tela inicial
 
