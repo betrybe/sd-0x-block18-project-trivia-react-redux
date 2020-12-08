@@ -42,7 +42,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
       - [6. Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta](#6-desenvolva-o-jogo-onde-só-deve-ser-possível-escolher-uma-resposta-correta-por-pergunta)
       - [7. Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas](#7-desenvolva-o-estilo-que-ao-clicar-em-uma-resposta-a-correta-deve-ficar-verde-e-as-incorretas-vermelhas)
       - [8. Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder](#8-desenvolva-um-timer-onde-a-pessoa-que-joga-tem-30-segundos-para-responder)
-        - [9. Crie o placar com as seguintes características:](#9-crie-o-placar-com-as-seguintes-características)
+      - [9. Crie o placar com as seguintes características:](#9-crie-o-placar-com-as-seguintes-características)
       - [10. Crie um botão de "próxima" que apareça após a resposta ser dada](#10-crie-um-botão-de-próxima-que-apareça-após-a-resposta-ser-dada)
       - [11. Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total](#11-desenvolva-o-jogo-de-forma-que-a-pessoa-que-joga-deve-responder-5-perguntas-no-total)
     - [Tela de feedback](#tela-de-feedback)
@@ -230,7 +230,7 @@ Este repositório já contem um _template_ com um App React criado, configurado 
 
 ### Linter
 
-Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint` e `StyleLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
 
 ```bash
 npm run lint
@@ -557,7 +557,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Aguarda 5 segundos e responde a alternativa correta
   * Aguarda mais de 30 segundos para responder
 
-##### 9. Crie o placar com as seguintes características:
+#### 9. Crie o placar com as seguintes características:
 
   **PRIORIDADE 3** - Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
