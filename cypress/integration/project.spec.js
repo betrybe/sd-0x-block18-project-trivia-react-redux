@@ -178,22 +178,30 @@ describe('7 - [TELA DE JOGO] Desenvolva o estilo que, ao clicar em uma resposta,
 
   it('Verifica cor da alternativa correta quando acerta a questão', () => {
     cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border', '3px solid rgb(6, 240, 15)');
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border-color', 'rgb(6, 240, 15)');
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border-style', 'solid');
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border-width').and('within', '2.99', '3');
   });
 
   it('Verifica a cor das alternativas incorretas quando acerta a questão', () => {
     cy.get(CORRECT_ALTERNATIVE_SELECTOR).click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border', '3px solid rgb(255, 0, 0)');
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border-color', 'rgb(255, 0, 0)');
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border-style', 'solid');
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border-width').and('within', '2.99', '3');
   });
 
   it('Verifica cor da alternativa correta quando erra a questão', () => {
     cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border', '3px solid rgb(6, 240, 15)');
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border-color', 'rgb(6, 240, 15)');
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border-style', 'solid');
+    cy.get(CORRECT_ALTERNATIVE_SELECTOR).should('have.css', 'border-width').and('within', '2.99', '3');
   });
 
   it('Verifica a cor das alternativas incorretas quando erra a questão', () => {
     cy.get(WRONG_ALTERNATIVES_SELECTOR).first().click();
-    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border', '3px solid rgb(255, 0, 0)');
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border-color', 'rgb(255, 0, 0)');
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border-style', 'solid');
+    cy.get(WRONG_ALTERNATIVES_SELECTOR).should('have.css', 'border-width').and('within', '2.99', '3');
   });
 });
 
