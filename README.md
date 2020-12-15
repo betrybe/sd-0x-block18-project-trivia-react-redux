@@ -228,15 +228,20 @@ Além disso, você verá que os requisitos do projeto tem, além das observaçõ
 
 Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Ele também conta com uma branch **main-group** para cada grupo, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2 e assim por diante.
 
+---
+
 ### Linter
 
 Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint` e `StyleLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
 
 ```bash
 npm run lint
+npm run lint:styles
 ```
 
 ⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
+---
 
 ### Execução de testes de requisito
 
@@ -247,6 +252,8 @@ Para o projeto ser validado, todos os testes de comportamento devem passar. É p
 Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
 
 **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
+
+---
 
 ### API de Trivia
 
@@ -358,6 +365,7 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
 
 ```
+---
 
 ### Grupos de prioridade
 
@@ -374,6 +382,8 @@ Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos
 O avaliador testa a aplicação de maneira integrada. Ou seja: a tela de jogo só é aprovada quando a tela de login estiver pronta; As telas de ranking e feedback só serão aprovadas depois que as telas de login e jogo estiverem prontas. **É possível fazer as telas de jogo, ranking e feedback em paralelo, se a estrutura dos componentes for combinada pelo grupo!** Faz parte do desafio o desenvolvimento da aplicação sem o "acompanhamento" constante do avaliador. 
 
 Recomendamos, além disso, que os **requisitos de uma mesma tela** sejam feitos em sequência ou paralelamente por pessoas se comunicando _bastante_, para não haver conflitos. Embora requisitos de uma mesma tela com prioridades iguais possam ser feitos em paralelo, isso exigirá organização por parte das pessoas dividindo a tarefa para não haver conflitos.
+
+---
 
 ### Observações técnicas
 
