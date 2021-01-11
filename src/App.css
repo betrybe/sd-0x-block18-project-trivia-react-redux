@@ -8,29 +8,28 @@
 }
 
 .red-border {
-  border: 1px solid red;
+  border: 3px solid red;
 }
 
 .green-border {
-  border: 1px solid green;
+  border: 3px solid green;
 }
 
-@media ( prefers-reduced-motion : no-preference ) {
-
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: shake infinite 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    animation: shake infinite 0.82s cubic-bezier(.36,.07,.19,.97) both;
   }
 }
 
 .App-header {
-  align-items: center;
   background-color: #282c34;
-  color: white;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
@@ -38,7 +37,6 @@
 }
 
 @keyframes shake {
-
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
   }
