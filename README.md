@@ -1,3 +1,5 @@
+### Termos de acordo
+
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
 
 # Boas vindas ao repositório do projeto de Trivia!
@@ -8,7 +10,59 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## HABILIDADES
+# Sumário
+
+- [Boas vindas ao repositório do projeto de Trivia!](#boas-vindas-ao-repositório-do-projeto-de-trivia)
+- [Sumário](#sumário)
+- [Habilidades](#habilidades)
+- [Entregáveis](#entregáveis)
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
+  - [Data de entrega](#data-de-entrega)
+- [Instruções para entregar seu projeto:](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver:](#antes-de-começar-a-desenvolver)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+    - [Revisando um pull request](#revisando-um-pull-request)
+- [Como desenvolver](#como-desenvolver)
+    - [Linter](#linter)
+    - [Execução de testes de requisito](#execução-de-testes-de-requisito)
+    - [API de Trivia](#api-de-trivia)
+    - [Gravatar](#gravatar)
+    - [Grupos de prioridade](#grupos-de-prioridade)
+    - [Observações técnicas](#observações-técnicas)
+- [Requisitos do projeto](#requisitos-do-projeto)
+    - [Tela de início/login](#tela-de-iníciologin)
+      - [1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo](#1-crie-a-tela-de-login-onde-a-pessoa-que-joga-deve-preencher-as-informações-para-iniciar-um-jogo)
+      - [2. Crie o botão de iniciar o jogo](#2-crie-o-botão-de-iniciar-o-jogo)
+      - [3. Crie um botão que leva a pessoa para tela de configuração](#3-crie-um-botão-que-leva-a-pessoa-para-tela-de-configuração)
+    - [Tela de jogo](#tela-de-jogo)
+      - [4. Crie um _header_ que deve conter as informações da pessoa jogadora](#4-crie-um-header-que-deve-conter-as-informações-da-pessoa-jogadora)
+      - [5. Crie a página de jogo que deve conter as informações relacionadas à pergunta](#5-crie-a-página-de-jogo-que-deve-conter-as-informações-relacionadas-à-pergunta)
+      - [6. Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta](#6-desenvolva-o-jogo-onde-só-deve-ser-possível-escolher-uma-resposta-correta-por-pergunta)
+      - [7. Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas](#7-desenvolva-o-estilo-que-ao-clicar-em-uma-resposta-a-correta-deve-ficar-verde-e-as-incorretas-vermelhas)
+      - [8. Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder](#8-desenvolva-um-timer-onde-a-pessoa-que-joga-tem-30-segundos-para-responder)
+      - [9. Crie o placar com as seguintes características:](#9-crie-o-placar-com-as-seguintes-características)
+      - [10. Crie um botão de "próxima" que apareça após a resposta ser dada](#10-crie-um-botão-de-próxima-que-apareça-após-a-resposta-ser-dada)
+      - [11. Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total](#11-desenvolva-o-jogo-de-forma-que-a-pessoa-que-joga-deve-responder-5-perguntas-no-total)
+    - [Tela de feedback](#tela-de-feedback)
+      - [12. Desenvolva o header de _feedback_ que deve conter as informações da pessoa jogadora](#12-desenvolva-o-header-de-feedback-que-deve-conter-as-informações-da-pessoa-jogadora)
+      - [13. Crie a mensagem de _feedback_ para ser exibida a pessoa usuária](#13-crie-a-mensagem-de-feedback-para-ser-exibida-a-pessoa-usuária)
+      - [14. Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária](#14-exiba-as-informações-relacionadas-aos-resultados-obtidos-para-a-pessoa-usuária)
+      - [15. Crie a opção para a pessoa jogadora poder jogar novamente](#15-crie-a-opção-para-a-pessoa-jogadora-poder-jogar-novamente)
+      - [16. Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_](#16-crie-a-opção-para-a-pessoa-jogadora-poder-visualizar-a-tela-de-ranking)
+    - [Tela de ranking](#tela-de-ranking)
+      - [17. Crie a tela de _ranking_](#17-crie-a-tela-de-ranking)
+      - [18. Crie um botão para ir ao início](#18-crie-um-botão-para-ir-ao-início)
+    - [Extra não avaliativo: Tela de configurações](#extra-não-avaliativo-tela-de-configurações)
+        - [19. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;](#19-ao-mudar-o-valor-do-dropdown-categoria-apenas-perguntas-da-categoria-selecionada-devem-aparecer-para-a-pessoa-que-está-jogando-essa-configuração-será-identificada-pela-chave-category-no-retorno-da-api)
+        - [20. Ao mudar o valor do dropdown dificuldade, apenas perguntas da dificuldade selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave difficulty no retorno da API;](#20-ao-mudar-o-valor-do-dropdown-dificuldade-apenas-perguntas-da-dificuldade-selecionada-devem-aparecer-para-a-pessoa-que-está-jogando-essa-configuração-será-identificada-pela-chave-difficulty-no-retorno-da-api)
+        - [21. Ao mudar o valor do dropdown tipo, apenas perguntas do tipo selecionado devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave type no retorno da API.](#21-ao-mudar-o-valor-do-dropdown-tipo-apenas-perguntas-do-tipo-selecionado-devem-aparecer-para-a-pessoa-que-está-jogando-essa-configuração-será-identificada-pela-chave-type-no-retorno-da-api)
+- [Avisos finais](#avisos-finais)
+
+---
+
+# Habilidades
 
 Nesse projeto, você será capaz de:
 
@@ -26,53 +80,16 @@ Nesse projeto, você será capaz de:
 
 ---
 
-## SUMÁRIO
+# Entregáveis
 
-- [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Protótipo do projeto](#protótipo-do-projeto)
-- [Data de entrega](#data-de-entrega)
-- [Como desenvolver](#como-desenvolver)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-- [Requisitos do projeto](#requisitos-do-projeto)
-  - [Linter](#linter)
-  - [Execução de testes de requisito](#execução-de-testes-de-requisito)
-  - [API de Trivia](#api-de-trivia)
-  - [Gravatar](#gravatar)
-  - [Grupos de prioridade](#grupos-de-prioridade)
-  - [Observações técnicas](#observações-técnicas)
-- [Lista de requisitos](#lista-de-requisitos)
-  - [Tela de início](#tela-de-inicio)
-    - [1 - Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo](#1-crie-a-tela-de-login-onde-a-pessoa-que-joga-deve-preencher-as-informações-para-iniciar-um-jogo)
-    - [2 - Crie o botão de iniciar o jogo](#2-crie-o-botão-de-iniciar-o-jogo)
-    - [3 - Crie um botão que leva a pessoa para a tela de configuração](#3-crie-um-botão-que-leva-a-pessoa-para-tela-de-configuração)
-  - [Tela de jogo](#tela-de-jogo)
-    - [4 - Crie um header que deve conter as informações da pessoa jogadora](#4-crie-um-header-que-deve-conter-as-informações-da-pessoa-jogadora)
-    - [5 - Crie a página de jogo que deve conter as informações relacionadas à pergunta](#5-crie-a-página-de-jogo-que-deve-conter-as-informações-relacionadas-à-pergunta)
-    - [6 - Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta](#6-desenvolva-o-jogo-onde-só-deve-ser-possível-escolher-uma-resposta-correta-por-pergunta)
-    - [7 - Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas](#7-desenvolva-o-estilo-que-ao-clicar-em-uma-resposta-a-correta-deve-ficar-verde-e-as-incorretas-vermelhas)
-    - [8 - Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder](#8-desenvolva-um-timer-onde-a-pessoa-que-joga-tem-30-segundos-para-responder)
-    - [9 - Crie o placar os as seguintes características](#9-crie-o-placar-com-as-seguintes-características)
-    - [10 - Crie um botão de próxima que apareça após a resposta ser dada](#10-crie-um-botão-de-próxima-que-apareça-após-a-resposta-ser-dada)
-    - [11 - Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total](#11-desenvolva-o-jogo-de-forma-que-a-pessoa-que-joga-deve-responder-5-perguntas-no-total)
-  - [Tela de feedback](#tela-de-feedback)
-    - [12 - Desenvolva o header de feedback, que deve conter as informações da pessoa jogadora](#12-desenvolva-o-header-de-feedback-que-deve-conter-as-informações-da-pessoa-jogadora)
-    - [13 - Crie a mensagem de feedback para ser exibida à pessoa usuária](#13-crie-a-mensagem-de-feedback-para-ser-exibida-a-pessoa-usuária)
-    - [14 - Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária](#14-exiba-as-informações-relacionadas-aos-resultados-obtidos-para-a-pessoa-usuária)
-    - [15 - Crie a opção para a pessoa jogadora poder jogar novamente](#15-crie-a-opção-para-a-pessoa-jogadora-poder-jogar-novamente)
-    - [16 - Crie a opção para a pessoa jogadora poder visualizar a tela de ranking](#16-crie-a-opção-para-a-pessoa-jogadora-poder-visualizar-a-tela-de-ranking)
-  - [Tela de ranking](#tela-de-ranking)
-    - [17 - Crie a tela de ranking](#17-crie-a-tela-de-ranking)
-    - [18 - Crie um botão para ir ao início](#18-crie-um-botão-para-ir-ao-início)
-  - [Extra não avaliativo: tela de configurações](#extra-não-avaliativo-tela-de-configurações)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-  - [Revisando um Pull Request](#revisando-um-pull-request)
-- [Avisos finais](#avisos-finais)
+Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
+
+Lembre-se que você pode consultar nosso conteúdo sobre
+[Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
 
 ---
 
-## O QUE DEVERÁ SER DESENVOLVIDO
+## O que deverá ser desenvolvido
 
 Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Trivia** _(tipo um show do milhão americano rs)_ utilizando _React e Redux_, desenvolvendo em grupo suas funcionalidades de acordo com as demanas definidas em um quadro _Kanban_. Para viver um cenário mais próximo do mercado de trabalho, você deve fazer uma cópia desse quadro para utilizar com seu grupo. A partir dessas demandas, teremos uma aplicação onde a pessoa usuária poderá:
 
@@ -82,38 +99,27 @@ Você deverá desenvolver um jogo de perguntas e respostas baseado no jogo **Tri
   - Visualizar a página de ranking, se quiser, ao final de cada jogo.
   - Configurar algumas opções para o jogo em uma tela de configuração acessível a partir do cabeçalho do app.
 
-### Protótipo do projeto
+## Desenvolvimento
 
-Você pode acessar um protótipo completo da interface desejada para o projeto [**neste link**](https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1).
+Você pode acessar um **protótipo** completo da interface desejada para o projeto [**neste link**](https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1).
 
 **Sinta-se livre para alterar a UI.** Só respeite as restrições de cada requisito - elas serão usados na correção.
 
 ---
 
-## DATA DE ENTREGA
+## Data de entrega
 
   - Projeto em grupo.
 
   - Serão cinco dias de projeto.
 
-  - O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h` para ter entregue a avaliação final.
+  - Data de entrega para avaliação final do projeto: `dd/mm/yyyy - 14:00h`.
 
 ---
 
-## COMO DESENVOLVER
+# Instruções para entregar seu projeto:
 
-Este repositório **já conta com uma `main-group` para cada grupo**, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
-
-* **Criar sua branch de desenvolvimento a partir da sua branch main**. Para isso, clone este repositório, faça o `git checkout main-group-XX && git pull` e em seguida o `git checkout -b main-group-XX-minha-feature`.
-* Para criar uma Pull Request para fazer **Code Review**, entitule-a `[GRUPO XX] Meu título` e **sempre aponte a Pull Request da sua branch para a branch `main-group-XX` do seu grupo, como no exemplo abaixo:**
-
-![Exemplo de como apontar uma Pull Request para a branch main do grupo](pull-request-para-branch-do-grupo.png)
-
-* Quando várias pessoas desenvolvem para um mesmo projeto podem ocorrer **conflitos de merge** que precisarão ser resolvidos. Prestem atenção a isso!
-
-⚠ **ATENÇÃO! É POSSÍVEL COMMITAR, POR ENGANO, NA BRANCH DE OUTRO GRUPO, ENTÃO TOME MUITO CUIDADO** ⚠
-
-### Antes de começar a desenvolver:
+## Antes de começar a desenvolver:
 
 1. Clone o repositório
   * `git clone git@github.com:tryber/sd-0x-project-trivia-react-redux.git`.
@@ -164,7 +170,57 @@ Este repositório **já conta com uma `main-group` para cada grupo**, identifica
 
 7. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Linter_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
 
-## REQUISITOS DO PROJETO
+## Durante o desenvolvimento
+
+:warning: **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** :warning:
+
+* Faça `commits` das alterações que você fizer no código regularmente
+
+* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+
+* Os comandos que você utilizará com mais frequência são:
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+  2. `git add` _(para adicionar arquivos ao stage do Git)_
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+---
+
+## Depois de terminar o desenvolvimento (opcional)
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+
+Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+:warning: **Lembre-se que garantir que todas as issues comentadas pelo Linter estão resolvidas!** :warning:
+
+### Revisando um pull request
+
+À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
+
+Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+
+---
+
+# Como desenvolver
+
+Este repositório **já conta com uma `main-group` para cada grupo**, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
+
+* **Criar sua branch de desenvolvimento a partir da sua branch main**. Para isso, clone este repositório, faça o `git checkout main-group-XX && git pull` e em seguida o `git checkout -b main-group-XX-minha-feature`.
+* Para criar uma Pull Request para fazer **Code Review**, entitule-a `[GRUPO XX] Meu título` e **sempre aponte a Pull Request da sua branch para a branch `main-group-XX` do seu grupo, como no exemplo abaixo:**
+
+![Exemplo de como apontar uma Pull Request para a branch main do grupo](pull-request-para-branch-do-grupo.png)
+
+* Quando várias pessoas desenvolvem para um mesmo projeto podem ocorrer **conflitos de merge** que precisarão ser resolvidos. Prestem atenção a isso!
+
+⚠ **ATENÇÃO! É POSSÍVEL COMMITAR, POR ENGANO, NA BRANCH DE OUTRO GRUPO, ENTÃO TOME MUITO CUIDADO** ⚠
+
 
 Para o bom andamento deste projeto disponibilizamos, além do README a seguir, um _quadro Kanban_ com as demandas a realizar para o projeto ser concluído com sucesso. Confira o _Slack_ para saber como acessar o quadro! É de suma importância que o grupo se organize utilizando o quadro para maior eficiência e para que se minimizem os conflitos que a união de vários códigos trará.
 
@@ -172,15 +228,20 @@ Além disso, você verá que os requisitos do projeto tem, além das observaçõ
 
 Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Ele também conta com uma branch **main-group** para cada grupo, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2 e assim por diante.
 
+---
+
 ### Linter
 
-Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint` e `StyleLint`. Para rodar o linter localmente no seu projeto, execute os comandos abaixo:
 
 ```bash
 npm run lint
+npm run lint:styles
 ```
 
 ⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
+---
 
 ### Execução de testes de requisito
 
@@ -191,6 +252,8 @@ Para o projeto ser validado, todos os testes de comportamento devem passar. É p
 Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
 
 **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
+
+---
 
 ### API de Trivia
 
@@ -302,6 +365,7 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
 
 ```
+---
 
 ### Grupos de prioridade
 
@@ -318,6 +382,8 @@ Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos
 O avaliador testa a aplicação de maneira integrada. Ou seja: a tela de jogo só é aprovada quando a tela de login estiver pronta; As telas de ranking e feedback só serão aprovadas depois que as telas de login e jogo estiverem prontas. **É possível fazer as telas de jogo, ranking e feedback em paralelo, se a estrutura dos componentes for combinada pelo grupo!** Faz parte do desafio o desenvolvimento da aplicação sem o "acompanhamento" constante do avaliador. 
 
 Recomendamos, além disso, que os **requisitos de uma mesma tela** sejam feitos em sequência ou paralelamente por pessoas se comunicando _bastante_, para não haver conflitos. Embora requisitos de uma mesma tela com prioridades iguais possam ser feitos em paralelo, isso exigirá organização por parte das pessoas dividindo a tarefa para não haver conflitos.
+
+---
 
 ### Observações técnicas
 
@@ -355,15 +421,15 @@ player: {
 
 ---
 
+# Requisitos do projeto
 
-### LISTA DE REQUISITOS
----
+:warning: **Lembre-se que o seu projeto só será avaliado se estiver passando pelos checks do Linter** :warning:
 
 Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking. Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projetos nas ferramentas do React como o Router, Link, Redux e testes para ajudá-los a completar os requisitos.
 
 ### Tela de início/login
 
-#### 1. CRIE A TELA DE LOGIN, ONDE A PESSOA QUE JOGA DEVE PREENCHER AS INFORMAÇÕES PARA INICIAR UM JOGO
+#### 1. Crie a tela de login, onde a pessoa que joga deve preencher as informações para iniciar um jogo
 
   **PRIORIDADE 0** - Criar a tela de login contendo as informações de nome e email, onde a pessoa que joga deve conseguir escrever seu nome e email nos inputs e o botão de jogar deve estar desabilitado caso não tenha alguma dessas informações.
   
@@ -387,7 +453,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Botão Jogar desabilitado quando pessoa jogadora escrever apenas o email
   * Botão Jogar habilitado quando pessoa jogadora preencher os campos de nome e email
 
-#### 2. CRIE O BOTÃO DE INICIAR O JOGO
+#### 2. Crie o botão de iniciar o jogo
 
   **PRIORIDADE 1** - O botão "Jogar" deve fazer requisição para a API para obter o token e redirecionar a pessoa para tela de jogo
 
@@ -402,7 +468,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   * Inicia jogo salvando um token de jogador
 
-#### 3. CRIE UM BOTÃO QUE LEVA A PESSOA PARA TELA DE CONFIGURAÇÃO
+#### 3. Crie um botão que leva a pessoa para tela de configuração
 
   **PRIORIDADE 1** - A tela inicial deve conter um botão que leve para a configuração do jogo
 
@@ -418,7 +484,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 ### Tela de jogo
 
-#### 4. CRIE UM _HEADER_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
+#### 4. Crie um _header_ que deve conter as informações da pessoa jogadora
 
   **PRIORIDADE 1** - O header deve conter as informações sobre a pessoa jogadora, como a imagem do Gravatar, o nome e o placar
 
@@ -434,7 +500,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O nome da pessoa está presente no header
   * O placar zerado está presente no header
 
-#### 5. CRIE A PÁGINA DE JOGO QUE DEVE CONTER AS INFORMAÇÕES RELACIONADAS À PERGUNTA
+#### 5. Crie a página de jogo que deve conter as informações relacionadas à pergunta
 
   **PRIORIDADE 1** - Deve ser feita a requisição para a API para popular o jogo com as perguntas, categoria e alternativas
 
@@ -455,7 +521,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O texto da pergunta está presente
   * As alternativas devem estar presentes
 
-#### 6. DESENVOLVA O JOGO ONDE SÓ DEVE SER POSSÍVEL ESCOLHER UMA RESPOSTA CORRETA POR PERGUNTA
+#### 6. Desenvolva o jogo onde só deve ser possível escolher uma resposta correta por pergunta
 
   **PRIORIDADE 2** - A pergunta deve ter apenas uma alternativa correta
 
@@ -467,7 +533,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   * A quantidade de respostas corretas deve ser 1
 
-#### 7. DESENVOLVA O ESTILO QUE, AO CLICAR EM UMA RESPOSTA, A CORRETA DEVE FICAR VERDE E AS INCORRETAS, VERMELHAS
+#### 7. Desenvolva o estilo que, ao clicar em uma resposta, a correta deve ficar verde e as incorretas, vermelhas
 
   **PRIORIDADE 2** - Ao responder a pergunta, se a alternativa for correta, deve ficar verde, caso contrário, vermelha
 
@@ -483,7 +549,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Verifica cor da alternativa correta quando erra a questão
   * Verifica a cor das alternativas incorretas quando erra a questão
 
-#### 8. DESENVOLVA UM TIMER ONDE A PESSOA QUE JOGA TEM 30 SEGUNDOS PARA RESPONDER
+#### 8. Desenvolva um timer onde a pessoa que joga tem 30 segundos para responder
 
   **PRIORIDADE 3** - A página deve conter um timer que com o tempo máximo de 30 segundos para responder, caso ultrapasse o tempo, a pergunta é considerada errada
 
@@ -501,7 +567,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Aguarda 5 segundos e responde a alternativa correta
   * Aguarda mais de 30 segundos para responder
 
-##### 9. CRIE O PLACAR COM AS SEGUINTES CARACTERÍSTICAS:
+#### 9. Crie o placar com as seguintes características:
 
   **PRIORIDADE 3** - Ao clicar na resposta correta, pontos devem ser somados no placar da pessoa que está jogando
 
@@ -517,7 +583,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
    * Soma pontos ao acertar uma questão
    * Não soma pontos ao errar uma questão
 
-#### 10. CRIE UM BOTÃO DE "PRÓXIMA" QUE APAREÇA APÓS A RESPOSTA SER DADA
+#### 10. Crie um botão de "próxima" que apareça após a resposta ser dada
 
   **PRIORIDADE 3** - Deve aparecer um botão de "Próxima" (pergunta) após a resposta ser dada
 
@@ -532,7 +598,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Botão de próxima pergunta é visível quando a pergunta é respondida corretamente
   * Botão de próxima pergunta é visível quando a pergunta é respondida incorretamente
 
-#### 11. DESENVOLVA O JOGO DE FORMA QUE A PESSOA QUE JOGA DEVE RESPONDER 5 PERGUNTAS NO TOTAL
+#### 11. Desenvolva o jogo de forma que a pessoa que joga deve responder 5 perguntas no total
 
   **PRIORIDADE 2** - O jogo deve ser composto por 5 perguntas, onde, a cada nova pergunta, o timer é reiniciado e após respondê-las, a pessoa que joga deve ser redirecionada para a tela de feedback
 
@@ -551,7 +617,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 ### Tela de feedback
 
-#### 12. DESENVOLVA O HEADER DE _FEEDBACK_ QUE DEVE CONTER AS INFORMAÇÕES DA PESSOA JOGADORA
+#### 12. Desenvolva o header de _feedback_ que deve conter as informações da pessoa jogadora
 
   **PRIORIDADE 0** - A tela de feedback deve conter as informações da pessoa que joga, incluindo o placar com o valor referente ao desempenho no jogo
 
@@ -567,7 +633,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * O nome da pessoa está presente no header
   * O placar com o valor atual está presente no header
 
-#### 13. CRIE A MENSAGEM DE _FEEDBACK_ PARA SER EXIBIDA A PESSOA USUÁRIA
+#### 13. Crie a mensagem de _feedback_ para ser exibida a pessoa usuária
 
   **PRIORIDADE 1** - A tela de feedback deve exibir uma mensagem relacionada ao desempenho da pessoa que jogou
 
@@ -583,7 +649,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Acertou 3 perguntas
   * Acertou mais de 3 perguntas
 
-#### 14. EXIBA AS INFORMAÇÕES RELACIONADAS AOS RESULTADOS OBTIDOS PARA A PESSOA USUÁRIA
+#### 14. Exiba as informações relacionadas aos resultados obtidos para a pessoa usuária
 
   **PRIORIDADE 1** - A tela de feedback deve exibir informações sobre o desempenho da pessoa, como o placar final e o número de perguntas que acertou
 
@@ -595,7 +661,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Acertou 2 perguntas
   * Acertou 4 perguntas
 
-#### 15. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER JOGAR NOVAMENTE
+#### 15. Crie a opção para a pessoa jogadora poder jogar novamente
 
   **PRIORIDADE 3** - A pessoa terá a opção "Jogar novamente", que ao ser clicada, levará para a tela de inicial
 
@@ -606,7 +672,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   * A pessoa deve ser redirecionada para tela inicial
 
-#### 16. CRIE A OPÇÃO PARA A PESSOA JOGADORA PODER VISUALIZAR A TELA DE _RANKING_
+#### 16. Crie a opção para a pessoa jogadora poder visualizar a tela de _ranking_
 
   **PRIORIDADE 3** - Deve existir um botão que redirecione a pessoa para a tela de ranking
 
@@ -622,7 +688,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 ### Tela de ranking
 
-#### 17. CRIE A TELA DE _RANKING_
+#### 17. Crie a tela de _ranking_
 
   **PRIORIDADE 1** - A tela de ranking deve possuir uma lista com a imagem, nome e pontuação das pessoas que jogaram e deve ficar armazenado no localStorage
 
@@ -640,7 +706,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
   * Devem existir duas pessoas no _ranking_
   * O _ranking_ deve ser ordenado pela pontuação
 
-#### 18. CRIE UM BOTÃO PARA IR AO INÍCIO
+#### 18. Crie um botão para ir ao início
 
   **PRIORIDADE 3** - O botão deve redirecionar a pessoa para a tela de inicial (login)
 
@@ -653,7 +719,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
   * Volta para a tela inicial
 
-### EXTRA NÃO AVALIATIVO: Tela de configurações
+### Extra não avaliativo: Tela de configurações
 
 ##### 19. Ao mudar o valor do dropdown categoria, apenas perguntas da categoria selecionada devem aparecer para a pessoa que está jogando. Essa configuração será identificada pela chave category no retorno da API;
 
@@ -665,45 +731,7 @@ Recomendamos que o Redux e o Router sejam configurados nesse requisito, para que
 
 ---
 
-## Instruções para entregar seu projeto:
-
-### DURANTE O DESENVOLVIMENTO
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
----
-
-### REVISANDO UM PULL REQUEST
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
----
-
-# AVISOS FINAIS
+# Avisos finais
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
