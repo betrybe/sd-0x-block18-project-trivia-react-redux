@@ -253,6 +253,8 @@ Esses testes não consideram o layout de maneira geral, mas sim os atributos e i
 
 **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
 
+warning: **O OBJETIVO DESSE PROJETO É UTILIZAR REACT COM REDUX, PORTANTO, NO LOCALSTORAGE DEVE EXISTIR APENAS TRÊS CHAVES (STATE, TOKEN E RANKING), QUE SERÃO VERIFICADAS EM ALGUNS TESTES** :warning:
+
 ---
 
 ### API de Trivia
