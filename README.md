@@ -218,7 +218,7 @@ Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mai
 npm run lint
 npm run lint:styles
 ```
-
+Caso ainda fique alguma dúvida, você pode consultar nosso conteúdo sobre [`ESLint`](https://app.betrybe.com/course/real-life-engineer/eslint)
 ⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
 Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
@@ -232,6 +232,12 @@ Os testes deste projeto foram feitos utilizando o [Cypress](https://www.cypress.
 Para o projeto ser validado, todos os testes de comportamento devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do Cypress que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam. Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
 
 Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
+
+## Execução de um teste específico
+
+Para executar somente uma `spec` de testes, você pode selecionar qual delas você deseja após executar o comando `npm run cy:open`. Além disto você pode rodar todas as `specs` clicando no botão `Run all specs`.
+
+![img](./cypress-specs.jpeg)
 
 **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
 
@@ -351,6 +357,23 @@ https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50
 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
 
 ```
+---
+
+### Usando o Trello como ferramenta kanban
+
+Uma forma para seu grupo organizar as atividades e dividir as tarefas é através de um modelo de kanban. A Trybe disponibiliza um [board pré-configurado para vocês](https://trello.com/b/uqNKeveW/front-end-projeto-trivia) duplicarem no [Trello](https://trello.com/).
+
+![img](trello.gif)
+
+Para duplicar, basta seguir os passos:
+
+- Acesse o [link do board](https://trello.com/b/uqNKeveW/front-end-projeto-trivia)
+- Abra o menu no canto superior direito
+- Selecione "copiar quadros"
+- Defina o time do seu grupo e um título para o board
+- Clique em `criar`
+- Personalize seu novo kanban!
+
 ---
 
 ### Grupos de prioridade
@@ -729,7 +752,7 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
