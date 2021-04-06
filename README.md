@@ -253,7 +253,7 @@ Esses testes não consideram o layout de maneira geral, mas sim os atributos e i
 
 **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
 
-warning: **O OBJETIVO DESSE PROJETO É UTILIZAR REACT COM REDUX, PORTANTO, NO LOCALSTORAGE DEVE EXISTIR APENAS TRÊS CHAVES (STATE, TOKEN E RANKING), QUE SERÃO VERIFICADAS EM ALGUNS TESTES** :warning:
+:warning: **É MUITO importante utilizar, neste projeto, React com Redux para controlar a disseminação de informação entre os seus componentes. Por isso, no LocalStrage só é permitido haver três chaves (state, token e ranking) e isso será verificado nos testes!** :warning:
 
 ---
 
