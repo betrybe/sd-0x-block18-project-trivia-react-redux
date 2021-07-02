@@ -255,6 +255,17 @@ Esses testes não consideram o layout de maneira geral, mas sim os atributos e i
 
 :warning: **É MUITO importante utilizar, neste projeto, React com Redux para controlar a disseminação de informação entre os seus componentes. Por isso, no LocalStrage só é permitido haver três chaves (state, token e ranking) e isso será verificado nos testes!** :warning:
 
+### Dica: desativando testes
+
+Para rodar apenas um teste, basta a utilização da função `.only` após o describe. Com isso, será possível que apenas um requisito rode localmente e seja avaliado.
+
+![image](only-all-green.png)
+
+Caso queira avaliar apenas um tópico do requisito, você também pode usar o `.only` após o `test`.
+
+![image](only-one-green.png)
+
+
 ---
 
 ### API de Trivia
