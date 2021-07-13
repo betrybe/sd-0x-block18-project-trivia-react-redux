@@ -280,7 +280,7 @@ Esse endpoint te retornará o token que vai ser utilizado nas requisições segu
 }
 ```
 
-Paga pegar as perguntas, você deve realizar um GET request para o seguinte endpoint:
+Para pegar as perguntas, você deve realizar um GET request para o seguinte endpoint:
 
 ```
 https://opentdb.com/api.php?amount=${quantidade-de-perguntas-retornadas}&token=${seu-token-aqui}
@@ -393,16 +393,20 @@ Recomendamos, além disso, que os **requisitos de uma mesma tela** sejam feitos 
 
 Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de correção funcionem corretamente.
 
+**Gerenciamento de Estado**
+
+Utilizar o Redux para fazer o gerenciamento de estado da sua aplicação.
+
 **Player**
 
 No `localStorage` do navegador:
 * A chave `state` deve conter a seguinte estrutura:
 ```
 player: {
-    name,
-    assertions,
-    score,
-    gravatarEmail
+  name,
+  assertions,
+  score,
+  gravatarEmail
 }
 ```
 
@@ -429,7 +433,9 @@ player: {
 
 :warning: **Lembre-se que o seu projeto só será avaliado se estiver passando pelos checks do Linter** :warning:
 
-Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking. Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projetos nas ferramentas do React como o Router, Link, Redux e testes para ajudá-los a completar os requisitos.
+Nesse projeto, a pessoa que joga deve conseguir completar o jogo e conseguir ver seu placar depois de responder todas as 5 perguntas, além de acessar a tela de configurações e de ranking.
+
+:warning: **Lembrem-se de utilizar os conhecimentos adquiridos ao longo dos últimos projetos nas ferramentas do React como o Router, Link, Redux e testes para ajudá-los a completar os requisitos.** :warning:
 
 ### Tela de início/login
 
